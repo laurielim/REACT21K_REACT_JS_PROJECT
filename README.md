@@ -1,6 +1,6 @@
 # React JS Project
 
-This repo contains the course project I did throughout the React JS course which is part of the Full Stack Web Development Program at [Business College Helsinki](https://en.bc.fi/qualifications/full-stack-web-developer-program/).
+This repo contains the course project I did throughout the React JS course which is part of the Full Stack Web Developer Program at [Business College Helsinki](https://en.bc.fi/qualifications/full-stack-web-developer-program/).
 
 ## Technologies used
 
