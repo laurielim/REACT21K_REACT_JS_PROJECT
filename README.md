@@ -26,3 +26,13 @@ Mentor: Margit Tennosaar
 
 - [GitHub](https://github.com/margittennosaar) @margittennosaar
 - [LinkedIn](https://www.linkedin.com/in/margittennosaar/)
+
+## Task List
+
+### Task 01 - Building the base app
+
+- Make a clean create-react-app
+- Clean it and start to work with it
+- Make App, Header, Main, Footer, Nav, Home, Recipes, About components
+- Using React Router set up simple navigation with three pages – home, recipes, about
+- Start styling your app
