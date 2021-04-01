@@ -10,4 +10,38 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #23242a;
+  color: #eaeff0;
+  text-align: center;
+  line-height: 1.8;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+p,
+a {
+  font-size: 1.375rem;
+}
+
+a {
+  color: #f2d27b;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+main {
+  height: 50vh;
 }
