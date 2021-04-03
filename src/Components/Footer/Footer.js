@@ -1,4 +1,5 @@
 import React from "react";
+import "./Footer.css";
 
 const Footer = () => {
   let today = new Date();
@@ -6,8 +7,8 @@ const Footer = () => {
   return (
     <footer>
       <p>
-        Copyright {today.getFullYear()} Made by{" "}
-        <a href="https://github.com/laurielim">Laurie</a>.
+        Made by <a href="https://github.com/laurielim">Laurie</a>. Copyright{" "}
+        {today.getFullYear()}
       </p>
     </footer>
   );
