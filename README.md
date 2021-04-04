@@ -1,6 +1,6 @@
 # React JS Project
 
-This repo contains the course project I did throughout the React JS course which is part of the Full Stack Web Developer Program at [Business College Helsinki](https://en.bc.fi/qualifications/full-stack-web-developer-program/).
+This repo contains the course project I did throughout the React JS course which is part of the Full Stack Web Developer Program at [Business College Helsinki](https://en.bc.fi/qualifications/full-stack-web-developer-program/). Here is a [link to the initial design on Figma](https://www.figma.com/file/qVjZ8IDxZnayehZwQBCsev/TheCocktailApp?node-id=0%3A1).
 
 ## Technologies used
 
