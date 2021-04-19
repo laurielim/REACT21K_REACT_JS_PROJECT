@@ -36,3 +36,11 @@ Mentor: Margit Tennosaar
 - Make App, Header, Main, Footer, Nav, Home, Recipes, About components
 - Using React Router set up simple navigation with three pages – home, recipes, about
 - Start styling your app
+
+### Task 02 - Create a development database
+
+- Create a json file which contains some recipies.
+- Have a new page “Recipes” – where GET list of all recipies from db.json
+- In Recipies page, include a search for your recipies
+- Make meaningful commits, so teacher can see what you have been doing there
+- Post your project GH link to group Teams wiki
