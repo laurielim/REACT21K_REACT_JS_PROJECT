@@ -3,7 +3,7 @@ export const recipes = [
 		"@context": "http://schema.org/",
 		"@type": "Recipe",
 		name: "old fashioned",
-		image: ["https://source.unsplash.com/collection/qAegSdhKwnE/1600x900"],
+		image: ["https://source.unsplash.com/qAegSdhKwnE/1600x900"],
 		recipeCategory: "the unforgettables",
 		recipeYield: "1",
 		description:
@@ -60,7 +60,7 @@ export const recipes = [
 		"@context": "http://schema.org/",
 		"@type": "Recipe",
 		name: "dry martini",
-		image: ["https://source.unsplash.com/collection/2ssSOO2pPK8/1600x900"],
+		image: ["https://source.unsplash.com/2ssSOO2pPK8/1600x900"],
 		recipeCategory: "the unforgettables",
 		recipeYield: "1",
 		description:
@@ -94,7 +94,7 @@ export const recipes = [
 		"@context": "http://schema.org/",
 		"@type": "Recipe",
 		name: "bloody mary",
-		image: ["https://source.unsplash.com/collection/m_7sQR2pDF8/1600x900"],
+		image: ["https://source.unsplash.com/m_7sQR2pDF8/1600x900"],
 		recipeCategory: "contemporary classics",
 		recipeYield: "1",
 		description:
