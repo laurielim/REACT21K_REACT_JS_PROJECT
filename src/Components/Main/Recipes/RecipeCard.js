@@ -1,12 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const RecipeCard = ({ imageURL, name, goToRecipe }) => {
 	let altText = `Picture of ${name} from Unsplash`;
 	return (
 		<div className='recipe-card'>
-			<img src={imageURL} alt={altText} />
+			<div className='recipe-img-container'>
+				<img src={imageURL} alt={altText} />
+			</div>
 			<h3>{name}</h3>
-			<button onClick={goToRecipe}>See Recipe</button>
+			<Link onClick={goToRecipe}>See Recipe</Link>
 		</div>
 	);
 };

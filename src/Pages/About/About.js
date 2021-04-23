@@ -20,7 +20,7 @@ class About extends Component {
 				<p>
 					As I was learning PHP in parallel, I created my own RESTful API using
 					JSON files to store my data. You can check out the{" "}
-					<a href='#'>API page here</a> or <a href='#'>the repo on my github</a>
+					<a href='/'>API page here</a> or <a href='/'>the repo on my github</a>
 					.
 				</p>
 			</div>
