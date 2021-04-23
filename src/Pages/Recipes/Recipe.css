@@ -22,6 +22,25 @@
 	max-width: 90vw;
 }
 
+.recipe-scroll-wrapper::-webkit-scrollbar {
+	/* width: 10px; */
+	height: 15px;
+}
+
+.recipe-scroll-wrapper::-webkit-scrollbar-track {
+	background-color: #f2d27b55;
+	box-shadow: inset 0 0 5px grey;
+	border-radius: 10px;
+}
+
+.recipe-scroll-wrapper::-webkit-scrollbar-thumb {
+	background: #15161a;
+	border-radius: 10px;
+}
+.recipe-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+	background: #101014;
+}
+
 .recipe-card {
 	display: inline-block;
 	max-width: 500px;
