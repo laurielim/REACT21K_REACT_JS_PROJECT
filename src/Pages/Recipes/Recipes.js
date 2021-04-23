@@ -4,8 +4,10 @@ import "./Recipe.css";
 import { recipes } from "../../Components/Main/Recipes/recipeDb";
 import RecipeCard from "../../Components/Main/Recipes/RecipeCard";
 import AllRecipes from "../../Components/Main/Recipes/AllRecipes";
+import RecipeSearchResult from "../../Components/Main/Recipes/RecipeSearchResult";
 
 class Recipes extends Component {
+	state = {};
 	render() {
 		const recipeList = recipes.map((recipe) => {
 			const props = {
