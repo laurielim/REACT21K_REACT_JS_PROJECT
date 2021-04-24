@@ -1,4 +1,4 @@
-.container {
+.container.recipe {
 	width: 90vw;
 	margin-left: 8vw;
 }
@@ -7,6 +7,7 @@
 	max-width: 70vw;
 	width: 100%;
 	margin-top: 0;
+	text-align: center;
 }
 
 .recipes-container {
@@ -24,7 +25,6 @@
 }
 
 .recipe-scroll-wrapper::-webkit-scrollbar {
-	/* width: 10px; */
 	height: 15px;
 }
 

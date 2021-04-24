@@ -1,9 +1,9 @@
 footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 3.8rem;
-  display: flex;
-  align-items: center;
-  border-top: 1px solid #f2d27b;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 3.8rem;
+	display: grid;
+	place-content: center;
+	border-top: 1px solid #f2d27b;
 }

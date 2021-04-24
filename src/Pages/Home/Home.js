@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import "./Home.css";
 
 class Home extends Component {
 	render() {
 		return (
-			<div className='container'>
+			<div className='container home'>
 				<form>
 					<h1>
 						<label htmlFor='homeSearchBar'>What would you like to drink?</label>

@@ -12,7 +12,6 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	background-color: #23242a;
 	color: #eaeff0;
-	text-align: center;
 	position: relative;
 	min-height: 100vh;
 }
@@ -31,7 +30,6 @@ h3 {
 }
 p {
 	max-width: 65ch;
-	margin: 0 auto;
 	line-height: 1.8;
 }
 

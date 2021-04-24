@@ -55,7 +55,7 @@ class Recipes extends Component {
 		};
 
 		return (
-			<div className='container'>
+			<div className='container recipe'>
 				<div className='flex-content'>
 					<h1>Recipes</h1>
 					<form>
