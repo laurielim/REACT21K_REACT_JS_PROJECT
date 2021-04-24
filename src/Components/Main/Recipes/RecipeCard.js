@@ -9,7 +9,7 @@ const RecipeCard = ({ imageURL, name, goToRecipe }) => {
 				<img src={imageURL} alt={altText} />
 			</div>
 			<h3>{name}</h3>
-			<Link onClick={goToRecipe} className='recipe-card-link'>
+			<Link onClick={goToRecipe} to='/' className='recipe-card-link'>
 				See Recipe
 			</Link>
 		</div>

@@ -7,21 +7,51 @@ import AllRecipes from "../../Components/Main/Recipes/AllRecipes";
 import RecipeSearchResult from "../../Components/Main/Recipes/RecipeSearchResult";
 
 class Recipes extends Component {
-	state = {};
-	render() {
-		const recipeList = recipes.map((recipe) => {
-			const props = {
-				name: recipe.name,
-				imageURL: recipe.image,
-				goToRecipe: () => console.log("Here is your recipe"),
-			};
-			return <RecipeCard {...props} />;
-		});
+	state = {
+		searchInput: "",
+	};
 
-		const props = {
-			Unforgettables: recipeList,
-			Classics: recipeList,
-			New: recipeList,
+	searchValueHandler = (event) => {
+		this.setState({ searchInput: event.target.value });
+	};
+
+	render() {
+		const displayAllRecipes = () => {
+			const recipeList = recipes.map((recipe) => {
+				const props = {
+					name: recipe.name,
+					imageURL: recipe.image,
+					goToRecipe: () => console.log("Here is your recipe"),
+				};
+				return <RecipeCard {...props} />;
+			});
+
+			const props = {
+				Unforgettables: recipeList,
+				Classics: recipeList,
+				New: recipeList,
+			};
+
+			return <AllRecipes {...props} />;
+		};
+
+		const displaySearchResult = () => {
+			const recipeFilter = recipes.filter((recipe) => {
+				return recipe.name
+					.toLowerCase()
+					.includes(this.state.searchInput.toLowerCase());
+			});
+
+			const recipeList = recipeFilter.map((recipe) => {
+				const props = {
+					name: recipe.name,
+					imageURL: recipe.image,
+					goToRecipe: () => console.log("Here is your recipe"),
+				};
+				return <RecipeCard {...props} />;
+			});
+
+			return <RecipeSearchResult result={recipeList} />;
 		};
 
 		return (
@@ -37,10 +67,13 @@ class Recipes extends Component {
 							name='searchRecipe'
 							id='searchRecipe'
 							className='search-bar'
+							onChange={this.searchValueHandler}
 						/>
 					</form>
 				</div>
-				<AllRecipes {...props} />
+				{this.state.searchInput === ""
+					? displayAllRecipes()
+					: displaySearchResult()}
 			</div>
 		);
 	}
