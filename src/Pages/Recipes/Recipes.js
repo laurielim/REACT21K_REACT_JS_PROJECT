@@ -17,19 +17,29 @@ class Recipes extends Component {
 
 	render() {
 		const displayAllRecipes = () => {
-			const recipeList = recipes.map((recipe) => {
-				const props = {
-					name: recipe.name,
-					imageURL: recipe.image,
-					goToRecipe: () => console.log("Here is your recipe"),
-				};
-				return <RecipeCard {...props} />;
-			});
+			const filteredRecipeList = (condition) => {
+				return recipes
+					.filter((recipe) => {
+						return Math.floor(recipe.id / 100) === condition;
+					})
+					.map((recipe) => {
+						const props = {
+							name: recipe.name,
+							imageURL: recipe.image,
+							goToRecipe: () => console.log("Here is your recipe"),
+						};
+						return <RecipeCard {...props} />;
+					});
+			};
+
+			const filterUnforgettables = filteredRecipeList(1);
+			const filterClassics = filteredRecipeList(2);
+			const filterNew = filteredRecipeList(3);
 
 			const props = {
-				Unforgettables: recipeList,
-				Classics: recipeList,
-				New: recipeList,
+				Unforgettables: filterUnforgettables,
+				Classics: filterClassics,
+				New: filterNew,
 			};
 
 			return <AllRecipes {...props} />;
