@@ -1,17 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./Recipe.css";
 import RecipeCard from "../../Components/Main/Recipes/RecipeCard";
 import AllRecipes from "../../Components/Main/Recipes/AllRecipes";
 import RecipeSearchResult from "../../Components/Main/Recipes/RecipeSearchResult";
 
-const Recipes = ({ recipes }) => {
-	const [searchValue, setSearchValue] = useState("");
-
-	const searchValueHandler = (e) => {
-		setSearchValue(e.target.value);
-	};
-
+const Recipes = ({ recipes, searchValue, search }) => {
 	const displayAllRecipes = () => {
 		const filteredRecipeList = (condition) => {
 			return recipes
@@ -24,7 +18,7 @@ const Recipes = ({ recipes }) => {
 						imageURL: recipe.image,
 						goToRecipe: () => console.log("Here is your recipe"),
 					};
-					return <RecipeCard {...props} />;
+					return <RecipeCard key={recipe.id} {...props} />;
 				});
 		};
 
@@ -52,7 +46,7 @@ const Recipes = ({ recipes }) => {
 				imageURL: recipe.image,
 				goToRecipe: () => console.log("Here is your recipe"),
 			};
-			return <RecipeCard {...props} />;
+			return <RecipeCard key={recipe.id} {...props} />;
 		});
 
 		return <RecipeSearchResult result={recipeList} />;
@@ -67,11 +61,12 @@ const Recipes = ({ recipes }) => {
 						Search Recipe:
 					</label>
 					<input
+						value={searchValue}
 						type='text'
 						name='searchRecipe'
 						id='searchRecipe'
 						className='search-bar'
-						onChange={searchValueHandler}
+						onChange={search}
 					/>
 				</form>
 			</div>
