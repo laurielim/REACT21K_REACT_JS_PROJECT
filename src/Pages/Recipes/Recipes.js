@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 import "./Recipe.css";
-import { recipes } from "../../Components/Main/Recipes/recipeDb";
 import RecipeCard from "../../Components/Main/Recipes/RecipeCard";
 import AllRecipes from "../../Components/Main/Recipes/AllRecipes";
 import RecipeSearchResult from "../../Components/Main/Recipes/RecipeSearchResult";
@@ -9,7 +8,14 @@ import RecipeSearchResult from "../../Components/Main/Recipes/RecipeSearchResult
 class Recipes extends Component {
 	state = {
 		searchInput: "",
+		recipes: [],
 	};
+
+	componentDidMount() {
+		fetch(`//localhost:3001/recipes`)
+			.then((res) => res.json())
+			.then((data) => this.setState({ recipes: data }));
+	}
 
 	searchValueHandler = (event) => {
 		this.setState({ searchInput: event.target.value });
@@ -18,7 +24,7 @@ class Recipes extends Component {
 	render() {
 		const displayAllRecipes = () => {
 			const filteredRecipeList = (condition) => {
-				return recipes
+				return this.state.recipes
 					.filter((recipe) => {
 						return Math.floor(recipe.id / 100) === condition;
 					})
@@ -46,7 +52,7 @@ class Recipes extends Component {
 		};
 
 		const displaySearchResult = () => {
-			const recipeFilter = recipes.filter((recipe) => {
+			const recipeFilter = this.state.recipes.filter((recipe) => {
 				return recipe.name
 					.toLowerCase()
 					.includes(this.state.searchInput.toLowerCase());
