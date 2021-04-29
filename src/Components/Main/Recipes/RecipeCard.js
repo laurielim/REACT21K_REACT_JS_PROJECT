@@ -1,15 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useRouteMatch } from "react-router-dom";
 
-const RecipeCard = ({ imageURL, name, goToRecipe }) => {
+const RecipeCard = ({ imageURL, name, id }) => {
 	let altText = `Picture of ${name} from Unsplash`;
+	let { url } = useRouteMatch();
 	return (
 		<div className='recipe-card'>
 			<div className='recipe-img-container'>
 				<img src={imageURL} alt={altText} />
 			</div>
 			<h3>{name}</h3>
-			<Link onClick={goToRecipe} to='/' className='recipe-card-link'>
+			<Link to={`${url}/${id}`} className='recipe-card-link'>
 				See Recipe
 			</Link>
 		</div>

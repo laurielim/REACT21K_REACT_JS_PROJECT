@@ -1,11 +1,15 @@
 import React from "react";
+import { Switch, Route, useRouteMatch } from "react-router-dom";
 
 import "./Recipe.css";
 import RecipeCard from "../../Components/Main/Recipes/RecipeCard";
 import AllRecipes from "../../Components/Main/Recipes/AllRecipes";
 import RecipeSearchResult from "../../Components/Main/Recipes/RecipeSearchResult";
+import RecipePage from "./RecipePage/RecipePage";
 
 const Recipes = ({ recipes, searchValue, search }) => {
+	let { url } = useRouteMatch();
+
 	const displayAllRecipes = () => {
 		const filteredRecipeList = (condition) => {
 			return recipes
@@ -16,7 +20,7 @@ const Recipes = ({ recipes, searchValue, search }) => {
 					const props = {
 						name: recipe.name,
 						imageURL: recipe.image,
-						goToRecipe: () => console.log("Here is your recipe"),
+						id: recipe.id,
 					};
 					return <RecipeCard key={recipe.id} {...props} />;
 				});
@@ -44,8 +48,9 @@ const Recipes = ({ recipes, searchValue, search }) => {
 			const props = {
 				name: recipe.name,
 				imageURL: recipe.image,
-				goToRecipe: () => console.log("Here is your recipe"),
+				id: recipe.id,
 			};
+			console.log(recipe);
 			return <RecipeCard key={recipe.id} {...props} />;
 		});
 
@@ -53,25 +58,32 @@ const Recipes = ({ recipes, searchValue, search }) => {
 	};
 
 	return (
-		<div className='container recipe'>
-			<div className='flex-content'>
-				<h1>Recipes</h1>
-				<form>
-					<label htmlFor='searchRecipe' className='visually-hidden'>
-						Search Recipe:
-					</label>
-					<input
-						value={searchValue}
-						type='text'
-						name='searchRecipe'
-						id='searchRecipe'
-						className='search-bar'
-						onChange={search}
-					/>
-				</form>
-			</div>
-			{searchValue === "" ? displayAllRecipes() : displaySearchResult()}
-		</div>
+		<Switch>
+			<Route path={url} exact>
+				<div className='container recipes'>
+					<div className='flex-content'>
+						<h1>Recipes</h1>
+						<form onSubmit={(e) => e.preventDefault()}>
+							<label htmlFor='searchRecipe' className='visually-hidden'>
+								Search Recipe:
+							</label>
+							<input
+								value={searchValue}
+								type='text'
+								name='searchRecipe'
+								id='searchRecipe'
+								className='search-bar'
+								onChange={search}
+							/>
+						</form>
+					</div>
+					{searchValue === "" ? displayAllRecipes() : displaySearchResult()}
+				</div>
+			</Route>
+			<Route path={`${url}/:id`}>
+				<RecipePage />
+			</Route>
+		</Switch>
 	);
 };
 

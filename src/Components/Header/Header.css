@@ -1,22 +1,22 @@
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #f2d27b;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #f2d27b;
 }
 
-li {
-  display: inline-block;
-  margin-left: 2rem;
+header li {
+	display: inline-block;
+	margin-left: 2rem;
 }
 
-ul:last-child {
-  margin-right: 2rem;
+header ul:last-child {
+	margin-right: 2rem;
 }
 
 @media (max-width: 756px) {
-  header {
-    flex-direction: column;
-    padding-bottom: 2rem;
-  }
+	header {
+		flex-direction: column;
+		padding-bottom: 2rem;
+	}
 }

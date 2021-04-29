@@ -45,6 +45,10 @@ a {
 	color: #f2d27b;
 }
 
+a.active {
+	text-decoration: none;
+}
+
 a:hover {
 	text-decoration: none;
 }
