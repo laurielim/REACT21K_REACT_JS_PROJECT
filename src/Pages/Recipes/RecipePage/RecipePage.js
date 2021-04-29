@@ -32,13 +32,18 @@ const RecipePage = () => {
 					{ingredient.quantity} {ingredient.ingredient}
 				</li>
 			));
-		const listSteps = (steps) => steps.map((step) => <li>{step.text}</li>);
+		const listSteps = (steps) =>
+			steps.map((step) => (
+				<li>
+					<p>{step.text}</p>
+				</li>
+			));
 
 		recipeData = (
 			<>
 				<h1>{recipe.name}</h1>
 				<p>{recipe.description}</p>
-				<div className='recipe-container flex'>
+				<div className='recipe-container'>
 					<div className='img-container'>
 						<img src={recipe.image} alt={altText} />
 					</div>
@@ -46,12 +51,14 @@ const RecipePage = () => {
 						<h2>Ingredients</h2>
 						<ul>{listIngredients(recipe.recipeIngredient)}</ul>
 					</section>
-					<section className='ingredients-container'>
+					<section className='instructions-container'>
 						<h2>Recipe</h2>
 						<ol>{listSteps(recipe.recipeInstructions)}</ol>
 					</section>
 				</div>
-				<button onClick={() => history.goBack()}>Back to Recipes</button>
+				<div className='flex-content'>
+					<button onClick={() => history.goBack()}>Back to Recipes</button>
+				</div>
 			</>
 		);
 	}

@@ -55,6 +55,7 @@ a:hover {
 
 button {
 	font-size: initial;
+	font-weight: bold;
 	padding: 0.6rem 1rem;
 	margin: 0.5rem;
 	border-radius: 5px;
