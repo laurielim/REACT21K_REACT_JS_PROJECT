@@ -1,22 +1,12 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
+import Landing from "../../Components/Main/Home/Landing";
+import RecipeSearchResult from "../../Components/Main/Recipes/RecipeSearchResult";
 
-class Home extends Component {
-	render() {
-		return (
-			<div className='container home'>
-				<form>
-					<h1>
-						<label htmlFor='homeSearchBar'>What would you like to drink?</label>
-					</h1>
-					<input type='text' className='search-bar' id='homeSearchBar' />
-					<div className='buttons'>
-						<button type='submit'>Search Recipe</button>
-						<button type='submit'>I'm Feeling Bold!</button>
-					</div>
-				</form>
-			</div>
-		);
+const Home = () => {
+	const [searchInput, setSearchInput] = useState();
+	if (!searchInput) {
+		return <Landing />;
 	}
-}
+};
 
 export default Home;

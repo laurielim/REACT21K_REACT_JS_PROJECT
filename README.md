@@ -18,6 +18,8 @@ Inside a cloned directory/folder, run:
 ```bash
 npm install
 npm install react-router-dom
+npm install json-server --save-dev
+npm install axios
 ```
 
 ## Acknowledgment
@@ -39,8 +41,8 @@ Mentor: Margit Tennosaar
 
 ### Task 02 - Create a development database
 
-- Create a json file which contains some recipies.
+- Create a json file which contains some recipes
 - Have a new page “Recipes” – where GET list of all recipies from db.json
-- In Recipies page, include a search for your recipies
+- In Recipes page, include a search for your recipes
 - Make meaningful commits, so teacher can see what you have been doing there
 - Post your project GH link to group Teams wiki
