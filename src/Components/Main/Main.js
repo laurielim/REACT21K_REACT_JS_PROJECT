@@ -12,8 +12,8 @@ const Main = () => {
 
 	useEffect(() => {
 		const getData = async () => {
-			let res = await axios(`//localhost:3001/recipes`);
-			setRecipes(res.data);
+			let res = await axios(`//safe-mesa-30631.herokuapp.com/recipes`);
+			setRecipes(res.data.result);
 		};
 		getData();
 	}, []);

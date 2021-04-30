@@ -12,7 +12,9 @@ const RecipePage = () => {
 	useEffect(() => {
 		const getData = async () => {
 			if (!recipe) {
-				const res = await axios.get("//localhost:3001/recipes/" + id);
+				const res = await axios.get(
+					"//safe-mesa-30631.herokuapp.com/recipes/" + id
+				);
 				setRecipe(res.data);
 			}
 		};
@@ -28,13 +30,13 @@ const RecipePage = () => {
 		let altText = `Photo of ${recipe.name} from unsplash`;
 		const listIngredients = (ingredients) =>
 			ingredients.map((ingredient) => (
-				<li>
+				<li key={ingredient.ingredient}>
 					{ingredient.quantity} {ingredient.ingredient}
 				</li>
 			));
 		const listSteps = (steps) =>
 			steps.map((step) => (
-				<li>
+				<li key={step.text}>
 					<p>{step.text}</p>
 				</li>
 			));
