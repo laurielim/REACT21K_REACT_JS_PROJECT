@@ -28,7 +28,7 @@ npm install axios
 
 ## Sources
 
-The data comes from an API I created in my [Programming with PHP course](https://github.com/laurielim/REACT21K_PHP). You can see [the API repo here](https://github.com/laurielim/REACT21K_PHP_PROJECT).
+The data comes from an API I created in my [Programming in PHP course](https://github.com/laurielim/REACT21K_PHP). You can see [the API repo here](https://github.com/laurielim/REACT21K_PHP_PROJECT).
 
 ## Acknowledgment
 
