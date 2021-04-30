@@ -1,6 +1,6 @@
 # React JS Project
 
-This repo contains the course project I did throughout the React JS course which is part of the Full Stack Web Developer Program at [Business College Helsinki](https://en.bc.fi/qualifications/full-stack-web-developer-program/). Here is a [link to the initial design on Figma](https://www.figma.com/file/qVjZ8IDxZnayehZwQBCsev/TheCocktailApp?node-id=0%3A1).
+This repo contains the course project I did throughout the React JS course which is part of the Full Stack Web Developer Program at [Business College Helsinki](https://en.bc.fi/qualifications/full-stack-web-developer-program/). Here is a [link to the initial design on Figma](https://www.figma.com/file/qVjZ8IDxZnayehZwQBCsev/TheCocktailApp?node-id=0%3A1). You can see the [live demo here](https://laurielim-thecocktailapp.netlify.app/).
 
 ## Technologies used
 
@@ -10,6 +10,10 @@ Built with:
 - JS
 - CSS
 - Reactjs
+
+Hosted on:
+
+- Netlify
 
 ## Setup and Usage
 
@@ -21,6 +25,10 @@ npm install react-router-dom
 npm install json-server --save-dev
 npm install axios
 ```
+
+## Sources
+
+The data comes from an API I created in my [Programming with PHP course](https://github.com/laurielim/REACT21K_PHP). You can see [the API repo here](https://github.com/laurielim/REACT21K_PHP_PROJECT).
 
 ## Acknowledgment
 
