@@ -15,7 +15,7 @@ class About extends Component {
 				</p>
 				<p>
 					The initial idea was to make a website for cooking recipes. However I
-					wanted to make use of the{" "}
+					wanted to make use of{" "}
 					<a href='https://www.thecocktaildb.com/'>TheCocktailDB</a> which is an
 					open, crowd-sourced database of drinks and cocktails from around the
 					world. Based on this, I desgined{" "}

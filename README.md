@@ -54,3 +54,9 @@ Mentor: Margit Tennosaar
 - In Recipes page, include a search for your recipes
 - Make meaningful commits, so teacher can see what you have been doing there
 - Post your project GH link to group Teams wiki
+
+### Personal Task List
+
+- Have a placeholder for images that are still loading
+- Add a reset button next to the search bar on the recipe page
+- On mobile, visually indicate horizontal scrolling and seperate categories
