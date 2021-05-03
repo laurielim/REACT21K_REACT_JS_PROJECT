@@ -1,11 +1,12 @@
 import React from "react";
-import { Switch, Route, useRouteMatch } from "react-router-dom";
+import { Switch, Route, useRouteMatch, Link } from "react-router-dom";
 
 import "./Recipe.css";
 import RecipeCard from "../../Components/Main/Recipes/RecipeCard";
 import AllRecipes from "../../Components/Main/Recipes/AllRecipes";
 import RecipeSearchResult from "../../Components/Main/Recipes/RecipeSearchResult";
 import RecipePage from "./RecipePage/RecipePage";
+import AddRecipe from "./AddRecipe/AddRecipe";
 
 const Recipes = ({ recipes, searchValue, search }) => {
 	let { url } = useRouteMatch();
@@ -78,7 +79,11 @@ const Recipes = ({ recipes, searchValue, search }) => {
 						</form>
 					</div>
 					{searchValue === "" ? displayAllRecipes() : displaySearchResult()}
+					<Link to={`${url}/add-recipe`}>Add New Recipe</Link>
 				</div>
+			</Route>
+			<Route path={`${url}/add-recipe`}>
+				<AddRecipe />
 			</Route>
 			<Route path={`${url}/:id`}>
 				<RecipePage />

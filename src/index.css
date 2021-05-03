@@ -57,7 +57,6 @@ button {
 	font-size: initial;
 	font-weight: bold;
 	padding: 0.6rem 1rem;
-	margin: 0.5rem;
 	border-radius: 5px;
 	background-color: #f2d27b;
 	color: #23242a;
@@ -96,5 +95,15 @@ input:focus {
 @media (max-width: 756px) {
 	html {
 		font-size: 13px;
+	}
+}
+
+/* Override Bootstrap */
+@media (min-width: 1200px),
+	(min-width: 992px),
+	(min-width: 768px),
+	(min-width: 576px) {
+	.container {
+		max-width: none;
 	}
 }

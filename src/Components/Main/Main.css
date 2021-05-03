@@ -19,7 +19,8 @@
 	text-align: center;
 }
 
-.container.about {
+.container.about,
+.container.add-recipe {
 	width: fit-content;
 	margin-left: 8vw;
 	margin-top: 4rem;
