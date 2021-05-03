@@ -24,6 +24,7 @@ npm install
 npm install react-router-dom
 npm install json-server --save-dev
 npm install axios
+npm install react-bootstrap bootstrap
 ```
 
 ## Sources
