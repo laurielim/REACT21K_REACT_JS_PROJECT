@@ -59,7 +59,7 @@ const RecipePage = () => {
 					</section>
 				</div>
 				<div className='flex-content'>
-					<button onClick={() => history.goBack()}>Back to Recipes</button>
+					<button onClick={() => history.goBack()}>Go Back</button>
 				</div>
 			</>
 		);

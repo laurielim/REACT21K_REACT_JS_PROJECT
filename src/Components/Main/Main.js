@@ -33,15 +33,24 @@ const Main = () => {
 	const searchFormHandler = (e) => {
 		e.preventDefault();
 		setSearchValue(e.target.homeSearchBar.value);
-		console.log(searchValue);
 		history.push("/recipes");
+	};
+
+	const randomRecipeHandler = () => {
+		let category = Math.ceil(Math.random() * 3);
+		let recipeId = Math.ceil(Math.random() * 9);
+		history.push(`/recipes/${category}0${recipeId}`);
 	};
 
 	return (
 		<main>
 			<Switch>
 				<Route exact path='/'>
-					<Home recipes={recipes} search={searchFormHandler} />
+					<Home
+						recipes={recipes}
+						search={searchFormHandler}
+						pickRandomRecipe={randomRecipeHandler}
+					/>
 				</Route>
 				<Route path='/recipes'>
 					<Recipes
