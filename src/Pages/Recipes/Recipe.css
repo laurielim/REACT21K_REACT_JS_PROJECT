@@ -91,6 +91,20 @@ form.flex-content {
 	height: 100%;
 }
 
+.scroll-right.flex-content {
+	align-items: center;
+	justify-content: flex-end;
+	margin-top: 0;
+}
+
+.svg-icon {
+	fill: whitesmoke;
+	width: 4rem;
+	height: 4rem;
+	margin: 1rem;
+	margin-top: 0;
+}
+
 @media (max-width: 756px) {
 	.pdr-3rem {
 		padding-right: 3rem;
