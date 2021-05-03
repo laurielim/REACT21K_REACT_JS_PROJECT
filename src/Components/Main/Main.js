@@ -9,13 +9,16 @@ import About from "../../Pages/About/About";
 
 const Main = () => {
 	const [recipes, setRecipes] = useState([]);
+	const [isLoading, setIsLoading] = useState(false);
 
 	useEffect(() => {
+		setIsLoading(true);
 		const getData = async () => {
 			let res = await axios(`//safe-mesa-30631.herokuapp.com/recipes`);
 			setRecipes(res.data.result);
 		};
 		getData();
+		setIsLoading(false);
 	}, []);
 
 	const [searchValue, setSearchValue] = useState("");
@@ -23,6 +26,8 @@ const Main = () => {
 	const searchValueHandler = (e) => {
 		setSearchValue(e.target.value);
 	};
+
+	const resetSearchHandler = () => setSearchValue("");
 
 	let history = useHistory();
 	const searchFormHandler = (e) => {
@@ -40,9 +45,11 @@ const Main = () => {
 				</Route>
 				<Route path='/recipes'>
 					<Recipes
+						isLoading={isLoading}
 						recipes={recipes}
 						search={searchValueHandler}
 						searchValue={searchValue}
+						resetSearchBar={resetSearchHandler}
 					/>
 				</Route>
 				<Route path='/about' component={About} />

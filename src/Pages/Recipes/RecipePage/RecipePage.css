@@ -32,6 +32,7 @@
 
 .img-container {
 	min-height: 320px;
+	background-color: #f2d27b50;
 	overflow: hidden;
 	grid-area: a;
 	display: grid;

@@ -8,11 +8,20 @@ import RecipeSearchResult from "../../Components/Main/Recipes/RecipeSearchResult
 import RecipePage from "./RecipePage/RecipePage";
 import AddRecipe from "./AddRecipe/AddRecipe";
 
-const Recipes = ({ recipes, searchValue, search }) => {
+const Recipes = ({
+	recipes,
+	searchValue,
+	search,
+	isLoading,
+	resetSearchBar,
+}) => {
 	let { url } = useRouteMatch();
 
 	const displayAllRecipes = () => {
 		const filteredRecipeList = (condition) => {
+			if (isLoading) {
+				return <h2>Loading...</h2>;
+			}
 			return recipes
 				.filter((recipe) => {
 					return Math.floor(recipe.id / 100) === condition;
@@ -51,7 +60,6 @@ const Recipes = ({ recipes, searchValue, search }) => {
 				imageURL: recipe.image,
 				id: recipe.id,
 			};
-			console.log(recipe);
 			return <RecipeCard key={recipe.id} {...props} />;
 		});
 
@@ -63,8 +71,8 @@ const Recipes = ({ recipes, searchValue, search }) => {
 			<Route path={url} exact>
 				<div className='container recipes'>
 					<div className='flex-content'>
-						<h1>Recipes</h1>
-						<form onSubmit={(e) => e.preventDefault()}>
+						<h1 className='pdr-3rem'>Recipes</h1>
+						<form className='flex-content' onSubmit={(e) => e.preventDefault()}>
 							<label htmlFor='searchRecipe' className='visually-hidden'>
 								Search Recipe:
 							</label>
@@ -76,10 +84,15 @@ const Recipes = ({ recipes, searchValue, search }) => {
 								className='search-bar'
 								onChange={search}
 							/>
+							<button type='reset' onClick={resetSearchBar}>
+								Reset
+							</button>
 						</form>
 					</div>
 					{searchValue === "" ? displayAllRecipes() : displaySearchResult()}
-					<Link to={`${url}/add-recipe`}>Add New Recipe</Link>
+					<div>
+						<Link to={`${url}/add-recipe`}>Add New Recipe</Link>
+					</div>
 				</div>
 			</Route>
 			<Route path={`${url}/add-recipe`}>
