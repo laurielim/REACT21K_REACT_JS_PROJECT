@@ -61,102 +61,110 @@ const AddRecipe = () => {
 
 	return (
 		<div className='container add-recipe'>
-			<h1>Add your recipe</h1>
+			<h1>Add Your Recipe</h1>
 
 			<Form onSubmit={submitData}>
-				<Form.Group>
-					<h2>
-						<Form.Label>Name</Form.Label>
-					</h2>
-					<Form.Control
-						size='lg'
-						type='text'
-						name='name'
-						onChange={updateData}
-					/>
-				</Form.Group>
-				<Form.Group>
-					<h2>
-						<Form.Label htmlFor=''>Description</Form.Label>
-					</h2>
-					<Form.Control
-						as='textarea'
-						rows={3}
-						type='text'
-						name='desc'
-						size='lg'
-						onChange={updateData}
-					/>
-				</Form.Group>
-				<Form.Group>
-					<h2>
-						<Form.Label htmlFor=''>Image Link</Form.Label>
-					</h2>
-					<Form.Control
-						type='url'
-						name='image'
-						size='lg'
-						onChange={updateData}
-					/>
-				</Form.Group>
-				<h2>Ingredients</h2>
-				{ingredients.map((_, i) => {
-					return (
-						<div className='list-inputs' key={i}>
-							<Form.Group>
-								<Row>
-									<Col>
-										<h3>
-											<Form.Label htmlFor=''>Quantity</Form.Label>
-										</h3>
-										<Form.Control
-											type='text'
-											name='quantity'
-											size='lg'
-											onChange={(e) => updateList(e, i)}
-										/>
-									</Col>
-									<Col>
-										<h3>
-											<Form.Label htmlFor=''>Ingredient</Form.Label>
-										</h3>
-										<Form.Control
-											type='text'
-											name='ingredient'
-											size='lg'
-											onChange={(e) => updateList(e, i)}
-										/>
-									</Col>
-								</Row>
-							</Form.Group>
-						</div>
-					);
-				})}
+				<section className='form-section'>
+					<Form.Group>
+						<h2>
+							<Form.Label>Cocktail Name</Form.Label>
+						</h2>
+						<Form.Control
+							size='lg'
+							type='text'
+							name='name'
+							onChange={updateData}
+						/>
+					</Form.Group>
+					<Form.Group>
+						<h2>
+							<Form.Label htmlFor=''>Description</Form.Label>
+						</h2>
+						<Form.Control
+							as='textarea'
+							rows={3}
+							type='text'
+							name='desc'
+							size='lg'
+							onChange={updateData}
+						/>
+					</Form.Group>
+				</section>
+				<section className='form-section'>
+					<Form.Group>
+						<h2>
+							<Form.Label htmlFor=''>Image Link</Form.Label>
+						</h2>
+						<Form.Control
+							type='url'
+							name='image'
+							size='lg'
+							onChange={updateData}
+						/>
+					</Form.Group>
+				</section>
+				<section className='form-section'>
+					<h2>Ingredients</h2>
+					{ingredients.map((_, i) => {
+						return (
+							<div className='list-inputs' key={i}>
+								<Form.Group>
+									<Row>
+										<Col>
+											<h3>
+												<Form.Label htmlFor=''>Quantity</Form.Label>
+											</h3>
+											<Form.Control
+												type='text'
+												name='quantity'
+												size='lg'
+												onChange={(e) => updateList(e, i)}
+											/>
+										</Col>
+										<Col>
+											<h3>
+												<Form.Label htmlFor=''>Ingredient</Form.Label>
+											</h3>
+											<Form.Control
+												type='text'
+												name='ingredient'
+												size='lg'
+												onChange={(e) => updateList(e, i)}
+											/>
+										</Col>
+									</Row>
+								</Form.Group>
+							</div>
+						);
+					})}
 
-				<button onClick={addMoreIngredients}>Add More Ingredients</button>
+					<button onClick={addMoreIngredients}>Add More Ingredients</button>
+				</section>
+				<section className='form-section'>
+					<h2>Instructions</h2>
 
-				<h2>Instructions</h2>
-
-				{steps.map((_, i) => {
-					return (
-						<div className='list-inputs' key={i}>
-							<Form.Group>
-								<h3>
-									<Form.Label htmlFor=''>Step {1 + i}</Form.Label>
-								</h3>
-								<Form.Control
-									type='text'
-									name='step'
-									size='lg'
-									onChange={(e) => updateList(e, i)}
-								/>
-							</Form.Group>
-						</div>
-					);
-				})}
-				<button onClick={addMoreSteps}>Add More Steps</button>
-
-				<button type='submit'>Post Recipe</button>
+					{steps.map((_, i) => {
+						return (
+							<div className='list-inputs' key={i}>
+								<Form.Group>
+									<h3>
+										<Form.Label htmlFor=''>Step {1 + i}</Form.Label>
+									</h3>
+									<Form.Control
+										type='text'
+										name='step'
+										size='lg'
+										onChange={(e) => updateList(e, i)}
+									/>
+								</Form.Group>
+							</div>
+						);
+					})}
+					<button onClick={addMoreSteps}>Add More Steps</button>
+				</section>
+				<div className='flex-content add-recipe-button'>
+					<button type='submit'>Post Recipe</button>
+				</div>
 			</Form>
 		</div>
 	);

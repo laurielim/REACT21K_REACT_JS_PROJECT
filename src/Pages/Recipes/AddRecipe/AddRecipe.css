@@ -1,7 +1,20 @@
-.container.add-recipe * {
-	margin-top: 1rem;
-}
-
+.row,
 .col {
 	margin-top: 0;
+}
+
+.form-section {
+	border: 2px solid #f2d27b;
+	border-radius: 5px;
+	padding: 2rem;
+}
+
+.add-recipe-button {
+	justify-content: flex-end;
+}
+
+@media (max-width: 576px) {
+	.container.add-recipe {
+		margin-left: 0;
+	}
 }
