@@ -46,6 +46,11 @@
 	margin-top: 0;
 }
 
+.buttons > * {
+	margin: 1rem;
+	margin-bottom: 0;
+}
+
 @media (max-width: 756px) {
 	.flex-content {
 		justify-content: center;
