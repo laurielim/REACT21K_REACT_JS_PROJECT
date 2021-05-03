@@ -30,14 +30,14 @@ const RecipePage = () => {
 		let altText = `Photo of ${recipe.name} from unsplash`;
 		const listIngredients = (ingredients) =>
 			ingredients.map((ingredient) => (
-				<li key={ingredient.ingredient}>
+				<li key={ingredient.id}>
 					{ingredient.quantity} {ingredient.ingredient}
 				</li>
 			));
 		const listSteps = (steps) =>
 			steps.map((step) => (
-				<li key={step.text}>
-					<p>{step.text}</p>
+				<li key={step.id}>
+					<p>{step.step}</p>
 				</li>
 			));
 
