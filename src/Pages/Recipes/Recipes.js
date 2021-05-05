@@ -85,7 +85,7 @@ const Recipes = ({
 								onChange={search}
 							/>
 							<button type='reset' onClick={resetSearchBar}>
-								Reset
+								Clear<span className='visually-hidden'> search bar</span>
 							</button>
 						</form>
 					</div>
