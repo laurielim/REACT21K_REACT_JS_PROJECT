@@ -8,6 +8,11 @@
 	padding: 2rem;
 }
 
+.form-text {
+	font-size: 1.375rem;
+	margin-top: 0;
+}
+
 @media (max-width: 576px) {
 	.container.add-recipe {
 		margin-left: 0;

@@ -95,11 +95,15 @@ const AddRecipe = () => {
 						<h2>
 							<Form.Label htmlFor=''>Image Link</Form.Label>
 						</h2>
+						<Form.Text id='formTextImg'>
+							Use images from license free sources such as Unsplash.
+						</Form.Text>
 						<Form.Control
 							type='url'
 							name='image'
 							size='lg'
 							onChange={updateData}
+							aria-describedby='formTextImg'
 						/>
 					</Form.Group>
 				</section>
@@ -114,22 +118,26 @@ const AddRecipe = () => {
 											<h3>
 												<Form.Label htmlFor=''>Quantity</Form.Label>
 											</h3>
+											<Form.Text id='formTextQty'>E.g. 4.5 cl</Form.Text>
 											<Form.Control
 												type='text'
 												name='quantity'
 												size='lg'
 												onChange={(e) => updateList(e, i)}
+												aria-describedby='formTextQty'
 											/>
 										</Col>
 										<Col>
 											<h3>
 												<Form.Label htmlFor=''>Ingredient</Form.Label>
 											</h3>
+											<Form.Text id='formTextIng'>E.g. Whiskey</Form.Text>
 											<Form.Control
 												type='text'
 												name='ingredient'
 												size='lg'
 												onChange={(e) => updateList(e, i)}
+												aria-describedby='formTextIng'
 											/>
 										</Col>
 									</Row>
