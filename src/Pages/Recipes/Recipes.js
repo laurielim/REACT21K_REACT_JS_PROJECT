@@ -91,11 +91,11 @@ const Recipes = ({
 					</div>
 					{searchValue === "" ? displayAllRecipes() : displaySearchResult()}
 					<div>
-						<Link to={`${url}/add-recipe`}>Add New Recipe</Link>
+						<Link to={`${url}/new`}>Add New Recipe</Link>
 					</div>
 				</div>
 			</Route>
-			<Route path={`${url}/add-recipe`}>
+			<Route path={`${url}/new`}>
 				<AddRecipe />
 			</Route>
 			<Route path={`${url}/:id`}>

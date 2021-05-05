@@ -162,9 +162,7 @@ const AddRecipe = () => {
 					})}
 					<button onClick={addMoreSteps}>Add More Steps</button>
 				</section>
-				<div className='flex-content add-recipe-button'>
-					<button type='submit'>Post Recipe</button>
-				</div>
+				<button type='submit'>Post Recipe</button>
 			</Form>
 		</div>
 	);
