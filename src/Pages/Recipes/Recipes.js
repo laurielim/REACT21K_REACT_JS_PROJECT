@@ -51,7 +51,10 @@ const Recipes = ({
 
 	const displaySearchResult = () => {
 		const recipeFilter = recipes.filter((recipe) => {
-			return recipe.name.toLowerCase().includes(searchValue.toLowerCase());
+			let resp =
+				recipe.name.toLowerCase().includes(searchValue.toLowerCase()) ||
+				recipe.ingredients.includes(searchValue.toLowerCase());
+			return resp;
 		});
 
 		const recipeList = recipeFilter.map((recipe) => {
@@ -89,10 +92,10 @@ const Recipes = ({
 							</button>
 						</form>
 					</div>
-					{searchValue === "" ? displayAllRecipes() : displaySearchResult()}
 					<div>
 						<Link to={`${url}/new`}>Add New Recipe</Link>
 					</div>
+					{searchValue === "" ? displayAllRecipes() : displaySearchResult()}
 				</div>
 			</Route>
 			<Route path={`${url}/new`}>

@@ -66,9 +66,8 @@ const AddRecipe = () => {
 			<Form onSubmit={submitData}>
 				<section className='form-section'>
 					<Form.Group>
-						<h2>
-							<Form.Label>Cocktail Name</Form.Label>
-						</h2>
+						<Form.Label>Cocktail Name</Form.Label>
+
 						<Form.Control
 							size='lg'
 							type='text'
@@ -77,9 +76,8 @@ const AddRecipe = () => {
 						/>
 					</Form.Group>
 					<Form.Group>
-						<h2>
-							<Form.Label htmlFor=''>Description</Form.Label>
-						</h2>
+						<Form.Label htmlFor=''>Description</Form.Label>
+
 						<Form.Control
 							as='textarea'
 							rows={3}
@@ -92,52 +90,41 @@ const AddRecipe = () => {
 				</section>
 				<section className='form-section'>
 					<Form.Group>
-						<h2>
-							<Form.Label htmlFor=''>Image Link</Form.Label>
-						</h2>
-						<Form.Text id='formTextImg'>
-							Use images from license free sources such as Unsplash.
-						</Form.Text>
+						<Form.Label htmlFor=''>Image Link</Form.Label>
+
 						<Form.Control
 							type='url'
 							name='image'
 							size='lg'
 							onChange={updateData}
-							aria-describedby='formTextImg'
 						/>
 					</Form.Group>
 				</section>
 				<section className='form-section'>
-					<h2>Ingredients</h2>
+					<p className='form-subtitle'>Ingredients</p>
 					{ingredients.map((_, i) => {
 						return (
 							<div className='list-inputs' key={i}>
 								<Form.Group>
 									<Row>
 										<Col>
-											<h3>
-												<Form.Label htmlFor=''>Quantity</Form.Label>
-											</h3>
-											<Form.Text id='formTextQty'>E.g. 4.5 cl</Form.Text>
+											<Form.Label htmlFor=''>Quantity</Form.Label>
+
 											<Form.Control
 												type='text'
 												name='quantity'
 												size='lg'
 												onChange={(e) => updateList(e, i)}
-												aria-describedby='formTextQty'
 											/>
 										</Col>
 										<Col>
-											<h3>
-												<Form.Label htmlFor=''>Ingredient</Form.Label>
-											</h3>
-											<Form.Text id='formTextIng'>E.g. Whiskey</Form.Text>
+											<Form.Label htmlFor=''>Ingredient</Form.Label>
+
 											<Form.Control
 												type='text'
 												name='ingredient'
 												size='lg'
 												onChange={(e) => updateList(e, i)}
-												aria-describedby='formTextIng'
 											/>
 										</Col>
 									</Row>
@@ -147,17 +134,23 @@ const AddRecipe = () => {
 					})}
 
 					<button onClick={addMoreIngredients}>Add More Ingredients</button>
+					<Form.Group>
+						<Form.Label htmlFor=''>Garnish</Form.Label>
+						<Form.Control
+							type='text'
+							name='garnish'
+							size='lg'
+							onChange={updateData}
+						/>
+					</Form.Group>
 				</section>
 				<section className='form-section'>
-					<h2>Instructions</h2>
-
+					<p className='form-subtitle'>Instructions</p>
 					{steps.map((_, i) => {
 						return (
 							<div className='list-inputs' key={i}>
 								<Form.Group>
-									<h3>
-										<Form.Label htmlFor=''>Step {1 + i}</Form.Label>
-									</h3>
+									<Form.Label htmlFor=''>Step {1 + i}</Form.Label>
 									<Form.Control
 										type='text'
 										name='step'
