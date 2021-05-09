@@ -14,7 +14,9 @@ const Main = () => {
 	useEffect(() => {
 		setIsLoading(true);
 		const getData = async () => {
-			let res = await axios(`//safe-mesa-30631.herokuapp.com/recipes`);
+			let res = await axios(
+				`//laurielim-thecocktailapp-api.herokuapp.com/recipes`
+			);
 			setRecipes(res.data.result);
 		};
 		getData();

@@ -13,7 +13,7 @@ const RecipePage = () => {
 		const getData = async () => {
 			if (!recipe) {
 				const res = await axios.get(
-					"//safe-mesa-30631.herokuapp.com/recipes/" + id
+					"//laurielim-thecocktailapp-api.herokuapp.com/recipes/" + id
 				);
 				setRecipe(res.data);
 			}
@@ -27,7 +27,10 @@ const RecipePage = () => {
 	}
 
 	if (recipe) {
-		let altText = `Photo of ${recipe.name} from unsplash`;
+		let imageLicense = "CC BY-SA 4.0";
+		let imageSource = "some url";
+		let imageAuthor = "John Doe";
+		let altText = `Photo of ${recipe.name} by  ${imageAuthor}`;
 		const listIngredients = (ingredients) =>
 			ingredients.map((ingredient) => (
 				<li key={ingredient.id}>
@@ -48,6 +51,10 @@ const RecipePage = () => {
 				<div className='recipe-container'>
 					<div className='img-container'>
 						<img src={recipe.image} alt={altText} />
+						<p className='img-attribution'>
+							<a href={imageSource}>{recipe.name}</a> by {imageAuthor}, licensed
+							under {imageLicense}
+						</p>
 					</div>
 					<section className='ingredients-container'>
 						<h2>Ingredients</h2>

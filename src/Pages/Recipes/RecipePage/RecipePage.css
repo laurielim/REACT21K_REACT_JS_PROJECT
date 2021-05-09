@@ -13,7 +13,7 @@
 	grid-template-areas:
 		"a b"
 		"c c";
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 50% 50%;
 	gap: 1rem;
 }
 
@@ -37,10 +37,31 @@
 	grid-area: a;
 	display: grid;
 	justify-content: center;
+	position: relative;
 }
 .img-container img {
 	width: auto;
 	height: 100%;
+}
+
+.img-attribution {
+	background-color: #00000077;
+	color: white;
+	position: absolute;
+	font-size: 0.9rem;
+	font-style: italic;
+	bottom: -1rem;
+	padding: 0 0.5rem;
+	width: 100%;
+}
+
+.img-attribution:hover {
+	background-color: #000000bb;
+}
+
+.img-attribution a {
+	font-size: inherit;
+	color: inherit;
 }
 
 .ingredients-container {
