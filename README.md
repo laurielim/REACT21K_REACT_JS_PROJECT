@@ -29,9 +29,9 @@ npm install react-bootstrap bootstrap
 
 ## Sources & Attributions
 
-The data comes from an API I created in my [Programming in PHP course](https://github.com/laurielim/REACT21K_PHP). You can see [the API repo here](https://github.com/laurielim/REACT21K_PHP_PROJECT).
-
-Arrow Icon by <a href="https://freeicons.io/profile/3484">BECRIS</a> on <a href="https://freeicons.io">freeicons.io</a>.
+- The data comes from an API I created in my [Programming in PHP course](https://github.com/laurielim/REACT21K_PHP). You can see [the API repo here](https://github.com/laurielim/REACT21K_PHP_PROJECT).
+- Most pictures are courtesy of Johann Trasch from [cocktailbar.de](https://cocktailbart.de/).
+- Arrow Icon by <a href="https://freeicons.io/profile/3484">BECRIS</a> on <a href="https://freeicons.io">freeicons.io</a>.
 
 ## Acknowledgment
 
