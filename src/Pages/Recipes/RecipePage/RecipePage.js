@@ -27,10 +27,7 @@ const RecipePage = () => {
 	}
 
 	if (recipe) {
-		let imageLicense = "CC BY-SA 4.0";
-		let imageSource = "some url";
-		let imageAuthor = "John Doe";
-		let altText = `Photo of ${recipe.name} by  ${imageAuthor}`;
+		let altText = `Photo of ${recipe.name} by  ${recipe.image.author}`;
 		const listIngredients = (ingredients) =>
 			ingredients.map((ingredient) => (
 				<li key={ingredient.id}>
@@ -50,15 +47,18 @@ const RecipePage = () => {
 				<p>{recipe.description}</p>
 				<div className='recipe-container'>
 					<div className='img-container'>
-						<img src={recipe.image} alt={altText} />
+						<img src={recipe.image.url} alt={altText} />
 						<p className='img-attribution'>
-							<a href={imageSource}>{recipe.name}</a> by {imageAuthor}, licensed
-							under {imageLicense}
+							Photo by <a href={recipe.image.source}>{recipe.image.author}</a>,
+							licensed under {recipe.image.license}
 						</p>
 					</div>
 					<section className='ingredients-container'>
 						<h2>Ingredients</h2>
 						<ul>{listIngredients(recipe.recipeIngredient)}</ul>
+						<p>
+							Garnish: {recipe.recipeGarnish ? recipe.recipeGarnish : "None."}
+						</p>
 					</section>
 					<section className='instructions-container'>
 						<h2>Recipe</h2>
