@@ -31,7 +31,7 @@ const AddRecipe = () => {
 
 	const updateList = (e, i) => {
 		const { name, value } = e.target;
-		if (name === "step") {
+		if (name.includes("step")) {
 			const list = [...steps];
 			list[i][name] = value;
 			setSteps(list);
@@ -61,7 +61,12 @@ const AddRecipe = () => {
 	};
 
 	const submitData = (e) => {
-		axios.post("http://localhost:3001/recipes", data);
+		e.preventDefault();
+		console.log(data);
+		axios
+			.post("//localhost:8000/recipes/add", data)
+			.then((res) => console.log(res))
+			.catch((err) => console.log(err));
 	};
 
 	return (
@@ -130,28 +135,26 @@ const AddRecipe = () => {
 				<section className='form-section'>
 					<h2 className='form-subtitle'>Ingredients</h2>
 					{ingredients.map((_, i) => {
-						let quantityId = "quantity " + i;
-						let ingredientId = "ingredient " + i;
 						return (
 							<div className='list-inputs' key={i}>
 								<Form.Group>
 									<Row>
 										<Col>
-											<Form.Label htmlFor={quantityId}>Quantity</Form.Label>
+											<Form.Label htmlFor=''>Quantity</Form.Label>
 
 											<Form.Control
 												type='text'
-												name={quantityId}
+												name='quantity'
 												size='lg'
 												onChange={(e) => updateList(e, i)}
 											/>
 										</Col>
 										<Col>
-											<Form.Label htmlFor={ingredientId}>Ingredient</Form.Label>
+											<Form.Label htmlFor=''>Ingredient</Form.Label>
 
 											<Form.Control
 												type='text'
-												name={ingredientId}
+												name='ingredient'
 												size='lg'
 												onChange={(e) => updateList(e, i)}
 											/>
@@ -164,7 +167,7 @@ const AddRecipe = () => {
 
 					<button onClick={addMoreIngredients}>Add More Ingredients</button>
 					<Form.Group>
-						<Form.Label htmlFor=''>Garnish</Form.Label>
+						<Form.Label htmlFor='garnish'>Garnish</Form.Label>
 						<Form.Control
 							type='text'
 							name='garnish'
@@ -176,14 +179,13 @@ const AddRecipe = () => {
 				<section className='form-section'>
 					<h2 className='form-subtitle'>Instructions</h2>
 					{steps.map((_, i) => {
-						let stepId = "step " + i;
 						return (
 							<div className='list-inputs' key={i}>
 								<Form.Group>
-									<Form.Label htmlFor={stepId}>Step {1 + i}</Form.Label>
+									<Form.Label htmlFor=''>Step {1 + i}</Form.Label>
 									<Form.Control
 										type='text'
-										name={stepId}
+										name='step'
 										size='lg'
 										onChange={(e) => updateList(e, i)}
 									/>
