@@ -61,10 +61,10 @@ const AddRecipe = () => {
 	};
 
 	const submitData = (e) => {
+		e.preventDefault();
 		axios
 			.post("//lit-bastion-54851.herokuapp.com/recipes/add", data)
-			.then((res) => console.log(res))
-			.catch((err) => console.log(err));
+			.then(history.push("/recipes"));
 	};
 
 	return (
