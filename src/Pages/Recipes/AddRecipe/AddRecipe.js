@@ -9,6 +9,9 @@ const AddRecipe = () => {
 	const [data, setData] = useState({
 		name: "",
 		desc: "",
+		imageURL: "",
+		imageAuthor: "",
+		imageLicense: "",
 		ingredients: [],
 		garnish: "",
 		instructions: [],
@@ -66,7 +69,7 @@ const AddRecipe = () => {
 			<Form onSubmit={submitData}>
 				<section className='form-section'>
 					<Form.Group>
-						<Form.Label>Cocktail Name</Form.Label>
+						<Form.Label htmlFor='name'>Cocktail Name</Form.Label>
 
 						<Form.Control
 							size='lg'
@@ -76,7 +79,7 @@ const AddRecipe = () => {
 						/>
 					</Form.Group>
 					<Form.Group>
-						<Form.Label htmlFor=''>Description</Form.Label>
+						<Form.Label htmlFor='desc'>Description</Form.Label>
 
 						<Form.Control
 							as='textarea'
@@ -90,11 +93,31 @@ const AddRecipe = () => {
 				</section>
 				<section className='form-section'>
 					<Form.Group>
-						<Form.Label htmlFor=''>Image Link</Form.Label>
+						<Form.Label htmlFor='imageURL'>Image Link</Form.Label>
 
 						<Form.Control
 							type='url'
-							name='image'
+							name='imageURL'
+							size='lg'
+							onChange={updateData}
+						/>
+					</Form.Group>
+					<Form.Group>
+						<Form.Label htmlFor='imageAuthor'>Image Author</Form.Label>
+
+						<Form.Control
+							type='text'
+							name='imageAuthor'
+							size='lg'
+							onChange={updateData}
+						/>
+					</Form.Group>
+					<Form.Group>
+						<Form.Label htmlFor='imageLicense'>Image License</Form.Label>
+
+						<Form.Control
+							type='text'
+							name='imageLicense'
 							size='lg'
 							onChange={updateData}
 						/>
@@ -103,26 +126,28 @@ const AddRecipe = () => {
 				<section className='form-section'>
 					<p className='form-subtitle'>Ingredients</p>
 					{ingredients.map((_, i) => {
+						let quantityId = "quantity " + i;
+						let ingredientId = "ingredient " + i;
 						return (
 							<div className='list-inputs' key={i}>
 								<Form.Group>
 									<Row>
 										<Col>
-											<Form.Label htmlFor=''>Quantity</Form.Label>
+											<Form.Label htmlFor={quantityId}>Quantity</Form.Label>
 
 											<Form.Control
 												type='text'
-												name='quantity'
+												name={quantityId}
 												size='lg'
 												onChange={(e) => updateList(e, i)}
 											/>
 										</Col>
 										<Col>
-											<Form.Label htmlFor=''>Ingredient</Form.Label>
+											<Form.Label htmlFor={ingredientId}>Ingredient</Form.Label>
 
 											<Form.Control
 												type='text'
-												name='ingredient'
+												name={ingredientId}
 												size='lg'
 												onChange={(e) => updateList(e, i)}
 											/>
@@ -147,13 +172,14 @@ const AddRecipe = () => {
 				<section className='form-section'>
 					<p className='form-subtitle'>Instructions</p>
 					{steps.map((_, i) => {
+						let stepId = "step " + i;
 						return (
 							<div className='list-inputs' key={i}>
 								<Form.Group>
-									<Form.Label htmlFor=''>Step {1 + i}</Form.Label>
+									<Form.Label htmlFor={stepId}>Step {1 + i}</Form.Label>
 									<Form.Control
 										type='text'
-										name='step'
+										name={stepId}
 										size='lg'
 										onChange={(e) => updateList(e, i)}
 									/>
