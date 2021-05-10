@@ -28,8 +28,10 @@
 .form-label {
 	font-size: 1.5rem;
 }
-@media (max-width: 576px) {
+
+@media (max-width: 765px) {
 	.container.add-recipe {
-		margin-left: 0;
+		margin: 0 auto;
+		margin-top: 4rem;
 	}
 }
