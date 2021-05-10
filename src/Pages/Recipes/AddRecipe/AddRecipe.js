@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
@@ -6,6 +7,7 @@ import Col from "react-bootstrap/Col";
 import "./AddRecipe.css";
 
 const AddRecipe = () => {
+	let history = useHistory();
 	const [data, setData] = useState({
 		name: "",
 		desc: "",
@@ -65,7 +67,7 @@ const AddRecipe = () => {
 	return (
 		<div className='container add-recipe'>
 			<h1>Add Your Recipe</h1>
-
+			<button onClick={() => history.goBack()}>Go Back</button>
 			<Form onSubmit={submitData}>
 				<section className='form-section'>
 					<h2 className='form-subtitle'>Recipe Info</h2>
