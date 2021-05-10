@@ -68,6 +68,7 @@ const AddRecipe = () => {
 
 			<Form onSubmit={submitData}>
 				<section className='form-section'>
+					<h2 className='form-subtitle'>Recipe Info</h2>
 					<Form.Group>
 						<Form.Label htmlFor='name'>Cocktail Name</Form.Label>
 
@@ -92,6 +93,7 @@ const AddRecipe = () => {
 					</Form.Group>
 				</section>
 				<section className='form-section'>
+					<h2 className='form-subtitle'>Image</h2>
 					<Form.Group>
 						<Form.Label htmlFor='imageURL'>Image Link</Form.Label>
 
@@ -124,7 +126,7 @@ const AddRecipe = () => {
 					</Form.Group>
 				</section>
 				<section className='form-section'>
-					<p className='form-subtitle'>Ingredients</p>
+					<h2 className='form-subtitle'>Ingredients</h2>
 					{ingredients.map((_, i) => {
 						let quantityId = "quantity " + i;
 						let ingredientId = "ingredient " + i;
@@ -170,7 +172,7 @@ const AddRecipe = () => {
 					</Form.Group>
 				</section>
 				<section className='form-section'>
-					<p className='form-subtitle'>Instructions</p>
+					<h2 className='form-subtitle'>Instructions</h2>
 					{steps.map((_, i) => {
 						let stepId = "step " + i;
 						return (

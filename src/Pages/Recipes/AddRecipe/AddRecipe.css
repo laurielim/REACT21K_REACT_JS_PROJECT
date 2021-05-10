@@ -12,17 +12,13 @@
 	margin-top: 0;
 }
 
+.form-subtitle,
 .form-group p {
 	margin: 0;
 }
 
 .list-inputs {
 	margin-top: 1rem;
-}
-
-.form-subtitle {
-	margin: 0;
-	font-size: 1.8rem;
 }
 
 .form-label {
