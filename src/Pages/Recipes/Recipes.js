@@ -56,7 +56,6 @@ const Recipes = ({
 				recipe.ingredients.includes(searchValue.toLowerCase());
 			return resp;
 		});
-		console.log(recipeFilter);
 
 		if (recipeFilter.length !== 0) {
 			const recipeList = recipeFilter.map((recipe) => {
