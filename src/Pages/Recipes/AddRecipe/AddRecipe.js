@@ -11,7 +11,7 @@ const AddRecipe = () => {
 	const [data, setData] = useState({
 		name: "",
 		desc: "",
-		imageURL: "",
+		imageLink: "",
 		imageAuthor: "",
 		imageLicense: "",
 		ingredients: [],
@@ -62,9 +62,9 @@ const AddRecipe = () => {
 
 	const submitData = (e) => {
 		e.preventDefault();
-		axios
-			.post("//lit-bastion-54851.herokuapp.com/recipes/add", data)
-			.then(history.push("/recipes"));
+		console.log(data);
+		axios.post("//127.0.0.1:8000/recipes/add", data);
+		// .then(history.push("/recipes"));
 	};
 
 	return (
@@ -101,7 +101,7 @@ const AddRecipe = () => {
 				<section className='form-section'>
 					<h2 className='form-subtitle'>Image</h2>
 					<Form.Group>
-						<Form.Label htmlFor='imageURL'>Image Link</Form.Label>
+						<Form.Label htmlFor='imageLink'>Image Link</Form.Label>
 
 						<Form.Control
 							type='url'
