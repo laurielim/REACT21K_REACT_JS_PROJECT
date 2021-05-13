@@ -82,6 +82,7 @@ const AddRecipe = () => {
 							type='text'
 							name='name'
 							onChange={updateData}
+							required
 						/>
 					</Form.Group>
 					<Form.Group>
@@ -104,7 +105,7 @@ const AddRecipe = () => {
 
 						<Form.Control
 							type='url'
-							name='imageURL'
+							name='imageLink'
 							size='lg'
 							onChange={updateData}
 						/>

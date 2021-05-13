@@ -56,17 +56,37 @@ const Recipes = ({
 				recipe.ingredients.includes(searchValue.toLowerCase());
 			return resp;
 		});
+		console.log(recipeFilter);
 
-		const recipeList = recipeFilter.map((recipe) => {
-			const props = {
-				name: recipe.name,
-				imageURL: recipe.image,
-				id: recipe.id,
-			};
-			return <RecipeCard key={recipe.id} {...props} />;
-		});
+		if (recipeFilter.length !== 0) {
+			const recipeList = recipeFilter.map((recipe) => {
+				const props = {
+					name: recipe.name,
+					imageURL: recipe.image,
+					id: recipe.id,
+				};
+				return <RecipeCard key={recipe.id} {...props} />;
+			});
+			return <RecipeSearchResult result={recipeList} />;
+		} else {
+			let suggestedDrink = [];
+			for (let i = 0; i < 2; i++) {
+				let drinkIndex = Math.floor(Math.random() * recipes.length);
+				let props = {
+					name: recipes[drinkIndex].name,
+					imageURL: recipes[drinkIndex].image,
+					id: recipes[drinkIndex].id,
+				};
+				suggestedDrink[i] = <RecipeCard key={recipes[i].id} {...props} />;
+			}
 
-		return <RecipeSearchResult result={recipeList} />;
+			return (
+				<div className='recipes-container'>
+					<h2>Sorry, no recipe found. Maybe try one of these:</h2>
+					{suggestedDrink}
+				</div>
+			);
+		}
 	};
 
 	return (
