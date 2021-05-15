@@ -4,6 +4,7 @@ import axios from "axios";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Alert from "react-bootstrap/Alert";
 import "./AddRecipe.css";
 
 const AddRecipe = () => {
@@ -18,6 +19,8 @@ const AddRecipe = () => {
 		garnish: "",
 		instructions: [],
 	});
+
+	const [showAlert, setShowAlert] = useState(false);
 
 	const [ingredients, setIngredients] = useState([
 		{ id: 1, ingredient: "", quantity: "" },
@@ -63,14 +66,33 @@ const AddRecipe = () => {
 	const submitData = (e) => {
 		e.preventDefault();
 		axios
-			.post("//laurielim-thecocktailapp-api.herokuapp.com/recipes/add", data)
-			.then(history.push("/recipes"));
+			.post("//laurielim-thecocktailapp-api.herokuapp.com/add", data)
+			.then(() => {
+				e.target.reset();
+				setShowAlert(true);
+				window.scrollTo(0, 0);
+			});
 	};
 
 	return (
 		<div className='container add-recipe'>
 			<h1>Add Your Recipe</h1>
 			<button onClick={() => history.goBack()}>Go Back</button>
+
+			{showAlert && (
+				<Alert
+					className='recipe-added-alert'
+					variant='success'
+					onClose={() => setShowAlert(false)}
+					dismissible
+				>
+					<Alert.Heading>Your recipe has been added!</Alert.Heading>
+					<p>
+						Go back to see your new recipe, or feel free to add another one.
+					</p>
+				</Alert>
+			)}
+
 			<Form onSubmit={submitData}>
 				<section className='form-section'>
 					<h2 className='form-subtitle'>Recipe Info</h2>

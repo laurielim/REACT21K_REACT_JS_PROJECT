@@ -25,6 +25,15 @@
 	font-size: 1.5rem;
 }
 
+.recipe-added-alert {
+	background-color: #f2d27b;
+	color: #23242a;
+}
+
+.recipe-added-alert p {
+	margin-top: 0;
+}
+
 @media (max-width: 765px) {
 	.container.add-recipe {
 		margin: 0 auto;
