@@ -17,7 +17,7 @@ const AllRecipes = ({ Unforgettables, Classics, New, Other }) => {
 
 			{Other.length > 0 ? (
 				<RecipeCategory
-					categoryName='Other Recipes'
+					categoryName='Contributed Recipes'
 					categoryRecipeCards={Other}
 				/>
 			) : (

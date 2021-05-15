@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Alert from "react-bootstrap/Alert";
+import Spinner from "react-bootstrap/Spinner";
 import "./AddRecipe.css";
 
 const AddRecipe = () => {
@@ -21,6 +22,7 @@ const AddRecipe = () => {
 	});
 
 	const [showAlert, setShowAlert] = useState(false);
+	const [isSending, setIsSending] = useState(false);
 
 	const [ingredients, setIngredients] = useState([
 		{ id: 1, ingredient: "", quantity: "" },
@@ -65,10 +67,12 @@ const AddRecipe = () => {
 
 	const submitData = (e) => {
 		e.preventDefault();
+		setIsSending(true);
 		axios
 			.post("//laurielim-thecocktailapp-api.herokuapp.com/add", data)
 			.then(() => {
 				e.target.reset();
+				setIsSending(false);
 				setShowAlert(true);
 				window.scrollTo(0, 0);
 			});
@@ -216,7 +220,21 @@ const AddRecipe = () => {
 					})}
 					<button onClick={addMoreSteps}>Add More Steps</button>
 				</section>
-				<button type='submit'>Post Recipe</button>
+				<button type='submit'>
+					{isSending ? (
+						<>
+							<Spinner
+								animation='border'
+								size='sm'
+								role='status'
+								aria-describedby='postingStatus'
+							></Spinner>{" "}
+							<span id='postingStatus'>Posting Recipe...</span>
+						</>
+					) : (
+						"Post Recipe"
+					)}
+				</button>
 			</Form>
 		</div>
 	);

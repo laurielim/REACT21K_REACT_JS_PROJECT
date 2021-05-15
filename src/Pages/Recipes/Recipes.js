@@ -128,7 +128,10 @@ const Recipes = ({ searchValue, search, resetSearchBar }) => {
 						</form>
 					</div>
 					<div>
-						<Link to={`${url}/new`}>Add New Recipe</Link>
+						<p>
+							Browse through IBA Official Cocktails or{" "}
+							<Link to={`${url}/new`}>add your own recipe</Link>.
+						</p>
 					</div>
 					{searchValue === "" ? displayAllRecipes() : displaySearchResult()}
 				</div>
