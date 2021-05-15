@@ -44,8 +44,8 @@ const Main = () => {
 
 	const randomRecipeHandler = () => {
 		let category = Math.ceil(Math.random() * 3);
-		let recipeId = Math.ceil(Math.random() * 9);
-		history.push(`/recipes/${category}0${recipeId}`);
+		let recipeId = Math.ceil(Math.random() * 10);
+		history.push(`/recipes/${category}${recipeId.toString().padStart(2, "0")}`);
 	};
 
 	return (

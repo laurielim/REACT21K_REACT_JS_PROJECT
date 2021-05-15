@@ -62,9 +62,8 @@ const AddRecipe = () => {
 
 	const submitData = (e) => {
 		e.preventDefault();
-		console.log(data);
 		axios
-			.post("//127.0.0.1:8000/recipes/add", data)
+			.post("//laurielim-thecocktailapp-api.herokuapp.com/recipes/add", data)
 			.then(history.push("/recipes"));
 	};
 
