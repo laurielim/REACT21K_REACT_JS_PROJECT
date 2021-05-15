@@ -6,12 +6,12 @@ class About extends Component {
 			<div className='container about'>
 				<h1>About TheCocktailApp</h1>
 				<p>
-					TheCocktailApp is the product of a project I did for my React JS
-					classes at Business College Helsinki as part of the{" "}
+					TheCocktailApp is the result of the course project I did for my React
+					JS classes at Business College Helsinki as part of the{" "}
 					<a href='https://en.bc.fi/qualifications/full-stack-web-developer-program/'>
 						Full Stack Web Developer Program
 					</a>
-					.
+					. This is a full stack application, built with React and Symfony.
 				</p>
 				<p>
 					The initial idea was to make a website for cooking recipes. However I
@@ -27,10 +27,20 @@ class About extends Component {
 				</p>
 				<p>
 					Since I was learning PHP in parallel, I created a RESTful API for my
-					website. The API connects to JSON files which store my data. You can
-					check out the <a href='/'>API page here</a> and/or{" "}
-					<a href='/'>the repo on my github</a>. The data I used is based on IBA
-					official cocktails.
+					website. You can check out the{" "}
+					<a href='//laurielim-thecocktailapp-api.herokuapp.com'>
+						API page here
+					</a>{" "}
+					and{" "}
+					<a href='//github.com/laurielim/REACT21K_PHP_PROJECT'>
+						the repo on my github
+					</a>
+					. The API connects to a database and some JSON files where my data is
+					stored. Read more about this project on{" "}
+					<a href='//laurielim.github.io/portfolio/thecocktailapp/'>
+						my portfolio website
+					</a>
+					.
 				</p>
 			</div>
 		);
