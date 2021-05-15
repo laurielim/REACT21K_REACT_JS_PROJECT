@@ -63,8 +63,9 @@ const AddRecipe = () => {
 	const submitData = (e) => {
 		e.preventDefault();
 		console.log(data);
-		axios.post("//127.0.0.1:8000/recipes/add", data);
-		// .then(history.push("/recipes"));
+		axios
+			.post("//127.0.0.1:8000/recipes/add", data)
+			.then(history.push("/recipes"));
 	};
 
 	return (

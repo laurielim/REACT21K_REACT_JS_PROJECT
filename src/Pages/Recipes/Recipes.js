@@ -39,11 +39,13 @@ const Recipes = ({
 		const filterUnforgettables = filteredRecipeList(1);
 		const filterClassics = filteredRecipeList(2);
 		const filterNew = filteredRecipeList(3);
+		const filterOther = filteredRecipeList(0);
 
 		const props = {
 			Unforgettables: filterUnforgettables,
 			Classics: filterClassics,
 			New: filterNew,
+			Other: filterOther,
 		};
 
 		return <AllRecipes {...props} />;
