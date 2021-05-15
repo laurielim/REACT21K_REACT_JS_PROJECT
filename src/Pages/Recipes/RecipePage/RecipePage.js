@@ -11,9 +11,15 @@ const RecipePage = () => {
 
 	useEffect(() => {
 		const getData = async () => {
-			if (!recipe) {
-				const res = await axios.get("//127.0.0.1:8000/recipes/" + id);
-				setRecipe(res.data);
+			try {
+				if (!recipe) {
+					const res = await axios.get(
+						"//laurielim-thecocktailapp-api.herokuapp.com/recipes/" + id
+					);
+					setRecipe(res.data);
+				}
+			} catch (err) {
+				console.error(err);
 			}
 		};
 		getData();

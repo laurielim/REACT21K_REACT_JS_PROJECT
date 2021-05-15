@@ -14,9 +14,14 @@ const Main = () => {
 	useEffect(() => {
 		setIsLoading(true);
 		const getData = async () => {
-			let res = await axios(`//127.0.0.1:8000/recipes`);
-			// `//laurielim-thecocktailapp-api.herokuapp.com/recipes`
-			setRecipes(res.data.result);
+			try {
+				let res = await axios(
+					`//laurielim-thecocktailapp-api.herokuapp.com/recipes`
+				);
+				setRecipes(res.data.result);
+			} catch (err) {
+				console.error(err);
+			}
 		};
 		getData();
 		setIsLoading(false);
