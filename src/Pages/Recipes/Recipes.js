@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Switch, Route, useRouteMatch, Link } from "react-router-dom";
-import axios from "axios";
 
 import "./Recipe.css";
 import RecipeCard from "../../Components/Main/Recipes/RecipeCard";
@@ -9,27 +8,14 @@ import RecipeSearchResult from "../../Components/Main/Recipes/RecipeSearchResult
 import RecipePage from "./RecipePage/RecipePage";
 import AddRecipe from "./AddRecipe/AddRecipe";
 
-const Recipes = ({ searchValue, search, resetSearchBar }) => {
+const Recipes = ({
+	recipes,
+	isLoading,
+	searchValue,
+	search,
+	resetSearchBar,
+}) => {
 	let { url } = useRouteMatch();
-
-	const [recipes, setRecipes] = useState([]);
-	const [isLoading, setIsLoading] = useState(false);
-
-	useEffect(() => {
-		setIsLoading(true);
-		const getData = async () => {
-			try {
-				let res = await axios(
-					`//laurielim-thecocktailapp-api.herokuapp.com/recipes`
-				);
-				setRecipes(res.data.result);
-			} catch (err) {
-				console.error(err);
-			}
-		};
-		getData();
-		setIsLoading(false);
-	}, []);
 
 	const displayAllRecipes = () => {
 		const filteredRecipeList = (condition) => {

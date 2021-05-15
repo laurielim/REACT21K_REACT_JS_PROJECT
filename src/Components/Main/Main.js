@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Switch, Route, useHistory } from "react-router-dom";
+import axios from "axios";
 
 import "./Main.css";
 import Home from "../../Pages/Home/Home";
@@ -8,6 +9,24 @@ import About from "../../Pages/About/About";
 
 const Main = () => {
 	const [searchValue, setSearchValue] = useState("");
+	const [recipes, setRecipes] = useState([]);
+	const [isLoading, setIsLoading] = useState(false);
+
+	useEffect(() => {
+		setIsLoading(true);
+		const getData = async () => {
+			try {
+				let res = await axios(
+					`//laurielim-thecocktailapp-api.herokuapp.com/recipes`
+				);
+				setRecipes(res.data.result);
+			} catch (err) {
+				console.error(err);
+			}
+		};
+		getData();
+		setIsLoading(false);
+	}, []);
 
 	const searchValueHandler = (e) => {
 		setSearchValue(e.target.value);
@@ -39,6 +58,8 @@ const Main = () => {
 				</Route>
 				<Route path='/recipes'>
 					<Recipes
+						recipes={recipes}
+						isLoading={isLoading}
 						search={searchValueHandler}
 						searchValue={searchValue}
 						resetSearchBar={resetSearchHandler}
