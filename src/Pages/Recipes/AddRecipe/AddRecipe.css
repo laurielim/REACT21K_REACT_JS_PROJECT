@@ -54,10 +54,3 @@
 		margin-top: 4rem;
 	}
 }
-
-@media (max-width: 576px) {
-	.col {
-		flex-basis: initial;
-		margin-top: 1rem;
-	}
-}
