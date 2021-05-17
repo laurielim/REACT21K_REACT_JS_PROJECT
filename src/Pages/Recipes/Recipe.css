@@ -27,6 +27,7 @@ form.flex-content {
 	position: relative;
 	max-width: 90vw;
 	min-height: 350px;
+	scroll-snap-type: x mandatory;
 }
 
 .recipe-scroll-wrapper::-webkit-scrollbar {
@@ -58,6 +59,7 @@ form.flex-content {
 	border-left: 2px solid #f2d27b;
 	border-right: 2px solid transparent;
 	text-transform: capitalize;
+	scroll-snap-align: start;
 }
 
 .recipe-card * + * {
