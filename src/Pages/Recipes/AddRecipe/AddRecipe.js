@@ -23,6 +23,7 @@ const AddRecipe = () => {
 
 	const [showAlert, setShowAlert] = useState(false);
 	const [isSending, setIsSending] = useState(false);
+	const [showImageSection, setShowImageSection] = useState(false);
 
 	const [ingredients, setIngredients] = useState([
 		{ id: 1, ingredient: "", quantity: "" },
@@ -124,39 +125,63 @@ const AddRecipe = () => {
 						/>
 					</Form.Group>
 				</section>
+
 				<section className='form-section'>
-					<h2 className='form-subtitle'>Image</h2>
-					<Form.Group>
-						<Form.Label htmlFor='imageLink'>Image Link</Form.Label>
+					<h2 className='form-subtitle'>
+						Image <span className='form-optional-tag'>- optional</span>
+					</h2>
+					{showImageSection ? (
+						<>
+							<Form.Group>
+								<Form.Label htmlFor='imageLink'>Image Link</Form.Label>
 
-						<Form.Control
-							type='url'
-							name='imageLink'
-							size='lg'
-							onChange={updateData}
-						/>
-					</Form.Group>
-					<Form.Group>
-						<Form.Label htmlFor='imageAuthor'>Image Author</Form.Label>
+								<Form.Control
+									type='url'
+									name='imageLink'
+									size='lg'
+									onChange={updateData}
+								/>
+							</Form.Group>
+							<Form.Group>
+								<Form.Label htmlFor='imageAuthor'>Image Author</Form.Label>
+								<Form.Control
+									type='text'
+									name='imageAuthor'
+									size='lg'
+									onChange={updateData}
+								/>
+							</Form.Group>
+							<Form.Group>
+								<Form.Label htmlFor='imageLicense'>Image License</Form.Label>
 
-						<Form.Control
-							type='text'
-							name='imageAuthor'
-							size='lg'
-							onChange={updateData}
-						/>
-					</Form.Group>
-					<Form.Group>
-						<Form.Label htmlFor='imageLicense'>Image License</Form.Label>
-
-						<Form.Control
-							type='text'
-							name='imageLicense'
-							size='lg'
-							onChange={updateData}
-						/>
-					</Form.Group>
+								<Form.Control
+									type='text'
+									name='imageLicense'
+									size='lg'
+									onChange={updateData}
+								/>
+							</Form.Group>
+						</>
+					) : (
+						<>
+							<p>If you wish to add an image, we request the following:</p>
+							<ul className='form-instructions'>
+								<li>Image Link, such as from Unsplash or Imgur</li>
+								<li>Image Author, we encourage attribution for all images</li>
+								<li>
+									Image License, as in{" "}
+									<a href='//creativecommons.org/about/cclicenses/'>
+										Creative Commons licenses
+									</a>
+								</li>
+							</ul>
+							<button type='button' onClick={() => setShowImageSection(true)}>
+								Add Image
+							</button>
+						</>
+					)}
 				</section>
+
 				<section className='form-section'>
 					<h2 className='form-subtitle'>Ingredients</h2>
 					{ingredients.map((_, i) => {
@@ -182,6 +207,7 @@ const AddRecipe = () => {
 												name='ingredient'
 												size='lg'
 												onChange={(e) => updateList(e, i)}
+												required
 											/>
 										</Col>
 									</Row>
@@ -213,6 +239,7 @@ const AddRecipe = () => {
 										name='step'
 										size='lg'
 										onChange={(e) => updateList(e, i)}
+										required
 									/>
 								</Form.Group>
 							</div>

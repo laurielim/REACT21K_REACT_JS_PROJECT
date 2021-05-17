@@ -34,6 +34,15 @@
 	margin-top: 0;
 }
 
+.form-instructions li {
+	margin-left: 2rem;
+}
+
+h2 .form-optional-tag {
+	font-size: 1.375rem;
+	font-style: italic;
+	font-weight: normal;
+}
 @media (max-width: 765px) {
 	.container.add-recipe {
 		margin: 0 auto;
