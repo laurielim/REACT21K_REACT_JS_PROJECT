@@ -103,9 +103,13 @@ input:focus {
 	width: 1px;
 }
 
-@media (max-width: 756px) {
+@media (max-width: 576px) {
 	html {
 		font-size: 13px;
+	}
+
+	h3 {
+		font-size: 2rem;
 	}
 }
 

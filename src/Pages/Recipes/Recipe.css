@@ -90,6 +90,7 @@ form.flex-content {
 	display: block;
 	position: absolute;
 	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
 }
@@ -119,16 +120,24 @@ form.flex-content {
 		padding-right: 0;
 	}
 
+	.recipe-card {
+		margin: 1rem;
+	}
+
 	.recipe-img-container {
-		width: 67vw;
+		width: 50vw;
 		height: auto;
 	}
 
 	.recipe-card-link::before {
-		width: 67vw;
+		width: 60vw;
 	}
 
 	form.flex-content * {
 		margin-top: 1rem;
+	}
+
+	.recipe-scroll-wrapper {
+		min-height: 260px;
 	}
 }
