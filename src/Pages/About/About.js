@@ -6,20 +6,32 @@ class About extends Component {
 			<div className='container about'>
 				<h1>About TheCocktailApp</h1>
 				<p>
-					TheCocktailApp is the result of the course project I did for my React
-					JS classes at Business College Helsinki as part of the{" "}
-					<a href='https://en.bc.fi/qualifications/full-stack-web-developer-program/'>
+					TheCocktailApp is the result of the course project I did for{" "}
+					<a href='//github.com/laurielim/REACT21K_REACT_JS'>
+						my React JS classes
+					</a>{" "}
+					as part of the{" "}
+					<a href='//en.bc.fi/qualifications/full-stack-web-developer-program/'>
 						Full Stack Web Developer Program
+					</a>{" "}
+					at Business College Helsinki. This is a full stack project. The
+					front-end is{" "}
+					<a href='//github.com/laurielim/REACT21K_REACT_JS_PROJECT'>
+						built with React
+					</a>{" "}
+					and the backend is{" "}
+					<a href='//github.com/laurielim/REACT21K_PHP_PROJECT'>
+						built with Symfony
 					</a>
-					. This is a full stack application, built with React and Symfony.
+					.
 				</p>
 				<p>
 					The initial idea was to make a website for cooking recipes. However I
 					wanted to make use of{" "}
-					<a href='https://www.thecocktaildb.com/'>TheCocktailDB</a> which is an
-					open, crowd-sourced database of drinks and cocktails from around the
-					world. Based on this, I desgined{" "}
-					<a href='https://www.figma.com/file/qVjZ8IDxZnayehZwQBCsev/TheCocktailApp?node-id=0%3A1'>
+					<a href='//www.thecocktaildb.com/'>TheCocktailDB</a> which is an open,
+					crowd-sourced database of drinks and cocktails from around the world.
+					Based on this, I desgined{" "}
+					<a href='//www.figma.com/file/qVjZ8IDxZnayehZwQBCsev/TheCocktailApp?node-id=0%3A1'>
 						the app on Figma
 					</a>
 					. As I was developing the website, the project requirements evolved
@@ -30,13 +42,9 @@ class About extends Component {
 					website. You can check out the{" "}
 					<a href='//laurielim-thecocktailapp-api.herokuapp.com'>
 						API page here
-					</a>{" "}
-					and{" "}
-					<a href='//github.com/laurielim/REACT21K_PHP_PROJECT'>
-						the repo on my github
 					</a>
-					. The API connects to a database and some JSON files where my data is
-					stored. Read more about this project on{" "}
+					. IBA official cocktails are stored in JSON files while contributed
+					recipes are stored in an SQL database. Read more about this project on{" "}
 					<a href='//laurielim.github.io/portfolio/thecocktailapp/'>
 						my portfolio website
 					</a>
