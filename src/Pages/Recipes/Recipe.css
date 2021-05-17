@@ -106,7 +106,6 @@ form.flex-content {
 	width: 4rem;
 	height: 4rem;
 	margin: 1rem;
-	margin-top: 0;
 }
 
 @media (max-width: 756px) {
@@ -143,5 +142,9 @@ form.flex-content {
 
 	.recipe-scroll-wrapper {
 		min-height: 260px;
+	}
+
+	.svg-icon {
+		margin-top: 0;
 	}
 }

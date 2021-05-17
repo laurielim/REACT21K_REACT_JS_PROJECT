@@ -1,5 +1,7 @@
 .container.recipe {
-	max-width: 1200px;
+	max-width: 91rem;
+	padding-left: 8vw;
+	padding-right: 8vw;
 	margin-top: 4rem;
 }
 
@@ -90,7 +92,8 @@
 @media (max-width: 900px) {
 	.container.recipe {
 		max-width: 90vw;
-		margin-top: 4rem;
+		padding-left: 0;
+		padding-right: 0;
 	}
 
 	.recipe-container {
