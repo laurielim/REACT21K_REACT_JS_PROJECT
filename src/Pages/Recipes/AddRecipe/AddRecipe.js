@@ -218,13 +218,20 @@ const AddRecipe = () => {
 
 					<button onClick={addMoreIngredients}>Add More Ingredients</button>
 					<Form.Group>
-						<Form.Label htmlFor='garnish'>Garnish</Form.Label>
-						<Form.Control
-							type='text'
-							name='garnish'
-							size='lg'
-							onChange={updateData}
-						/>
+						<Row>
+							<Col>
+								<Form.Label htmlFor='garnish'>
+									Garnish <span className='form-optional-tag'>- optional</span>
+								</Form.Label>
+								<Form.Control
+									type='text'
+									name='garnish'
+									size='lg'
+									onChange={updateData}
+								/>
+							</Col>
+							<Col></Col>
+						</Row>
 					</Form.Group>
 				</section>
 				<section className='form-section'>

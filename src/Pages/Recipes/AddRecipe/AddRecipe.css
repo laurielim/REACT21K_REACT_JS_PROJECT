@@ -38,7 +38,7 @@
 	margin-left: 2rem;
 }
 
-h2 .form-optional-tag {
+.form-optional-tag {
 	font-size: 1.375rem;
 	font-style: italic;
 	font-weight: normal;
@@ -47,5 +47,11 @@ h2 .form-optional-tag {
 	.container.add-recipe {
 		margin: 0 auto;
 		margin-top: 4rem;
+	}
+}
+
+@media (max-width: 576px) {
+	.col {
+		flex-basis: initial;
 	}
 }

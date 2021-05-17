@@ -116,7 +116,7 @@ const Recipes = ({
 					<div>
 						<p>
 							Browse through IBA Official Cocktails or{" "}
-							<Link to={`${url}/new`}>add your own recipe</Link>.
+							<Link to={`${url}/new`}>add your recipe</Link>.
 						</p>
 					</div>
 					{searchValue === "" ? displayAllRecipes() : displaySearchResult()}
