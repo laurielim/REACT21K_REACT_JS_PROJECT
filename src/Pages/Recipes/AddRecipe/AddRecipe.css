@@ -12,6 +12,11 @@
 	margin-top: 0;
 }
 
+.form-control:focus {
+	border-color: #23242a;
+	box-shadow: 0 0 0.2rem 0.2rem #f2d27b;
+}
+
 .form-subtitle,
 .form-group p {
 	margin: 0;
