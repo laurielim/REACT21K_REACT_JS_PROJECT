@@ -102,7 +102,7 @@
 	}
 
 	.img-container {
-		min-height: 0;
+		min-height: 160px;
 		display: block;
 	}
 	.img-container img {

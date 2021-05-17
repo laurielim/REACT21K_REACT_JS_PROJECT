@@ -10,7 +10,8 @@ const RecipePage = () => {
 	const [recipe, setRecipe] = useState();
 
 	useEffect(() => {
-		const getData = async () => {
+		window.scrollTo(0, 0);
+		const fetchData = async () => {
 			try {
 				if (!recipe) {
 					const res = await axios.get(
@@ -22,7 +23,7 @@ const RecipePage = () => {
 				console.error(err);
 			}
 		};
-		getData();
+		fetchData();
 	});
 
 	let recipeData = undefined;
