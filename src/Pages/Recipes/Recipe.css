@@ -120,12 +120,16 @@ form.flex-content {
 		padding-right: 0;
 	}
 
+	.container.recipes {
+		margin-left: auto;
+	}
+
 	.recipe-card {
 		margin: 1rem;
 	}
 
 	.recipe-img-container {
-		width: 50vw;
+		width: 55vw;
 		height: auto;
 	}
 
