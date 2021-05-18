@@ -6,6 +6,7 @@ import "./Main.css";
 import Home from "../../Pages/Home/Home";
 import Recipes from "../../Pages/Recipes/Recipes";
 import About from "../../Pages/About/About";
+import PageNotFound from "../../Pages/PageNotFound/PageNotFound";
 
 const Main = () => {
 	const [searchValue, setSearchValue] = useState("");
@@ -66,6 +67,7 @@ const Main = () => {
 					/>
 				</Route>
 				<Route path='/about' component={About} />
+				<Route path='*' component={PageNotFound} />
 			</Switch>
 		</main>
 	);
