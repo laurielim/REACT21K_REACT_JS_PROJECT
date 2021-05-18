@@ -45,7 +45,6 @@
 .container.no-page {
 	justify-content: space-around;
 	flex-wrap: wrap-reverse;
-	margin: 0 2%;
 }
 
 .search-bar {
@@ -75,6 +74,7 @@
 		margin-bottom: 1rem;
 	}
 
+	.container.no-page,
 	.container.about {
 		margin: 0 2%;
 		margin-top: 4rem;
