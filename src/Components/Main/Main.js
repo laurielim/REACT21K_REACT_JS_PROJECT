@@ -21,12 +21,12 @@ const Main = () => {
 					`//laurielim-thecocktailapp-api.herokuapp.com/recipes`
 				);
 				setRecipes(res.data.result);
+				setIsLoading(false);
 			} catch (err) {
 				console.error(err);
 			}
 		};
 		getData();
-		setIsLoading(false);
 	}, []);
 
 	const searchValueHandler = (e) => {
