@@ -73,7 +73,7 @@ const RecipePage = () => {
 				<div className='flex-content'>
 					<button
 						onClick={() =>
-							history.length > 1 ? history.goBack() : history.push("/recipes")
+							history.length > 2 ? history.goBack() : history.push("/recipes")
 						}
 					>
 						Go Back
