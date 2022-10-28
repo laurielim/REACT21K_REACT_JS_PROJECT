@@ -1,85 +1,135 @@
 .container {
-	padding-bottom: 8rem;
-	width: 98vw;
-	margin: 0 auto;
-	text-align: left;
+  padding-bottom: 8rem;
+  width: 98vw;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .container * + * {
-	margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 .container.no-page,
 .container.home {
-	min-height: 80vh;
-	max-width: 1200px;
+  min-height: 80vh;
+  max-width: 1200px;
 }
 
 .container.home {
-	display: grid;
-	align-items: center;
-	text-align: center;
+  display: grid;
+  align-items: center;
+  text-align: center;
 }
 
 .no-cocktails {
-	font-size: 12rem;
-	text-shadow: 0 0 2rem black;
-	line-height: 1.2;
-	margin-top: 2rem;
+  font-size: 12rem;
+  text-shadow: 0 0 2rem black;
+  line-height: 1.2;
+  margin-top: 2rem;
 }
 
 .container.about,
 .container.add-recipe {
-	width: fit-content;
-	margin-left: 8vw;
-	margin-top: 4rem;
+  width: fit-content;
+  margin-left: 8vw;
+  margin-top: 4rem;
 }
 
 .flex-content {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 2rem;
 }
 
 .container.no-page {
-	justify-content: space-around;
-	flex-wrap: wrap-reverse;
+  justify-content: space-around;
+  flex-wrap: wrap-reverse;
 }
 
 .search-bar {
-	min-width: 80%;
-	height: 3rem;
-	padding: 0 1rem;
-	font-size: initial;
-	text-align: center;
-	border-radius: 50px;
+  min-width: 80%;
+  height: 3rem;
+  padding: 0 1rem;
+  font-size: initial;
+  text-align: center;
+  border-radius: 50px;
 }
 
 .buttons {
-	margin-top: 0;
+  margin-top: 0;
 }
 
 .buttons > * {
-	margin: 1rem;
-	margin-bottom: 0;
+  margin: 1rem;
+  margin-bottom: 0;
 }
 
 @media (max-width: 756px) {
-	.flex-content {
-		justify-content: center;
-	}
+  .flex-content {
+    justify-content: center;
+  }
 
-	.flex-content * {
-		margin-bottom: 1rem;
-	}
+  .flex-content * {
+    margin-bottom: 1rem;
+  }
 
-	.container.no-page,
-	.container.about {
-		margin: 0 2%;
-		margin-top: 4rem;
-	}
-	.container.about h1 {
-		text-align: center;
-	}
+  .container.no-page,
+  .container.about {
+    margin: 0 2%;
+    margin-top: 4rem;
+  }
+
+  .container.api,
+  .container.api-about {
+    padding: 0 2%;
+    padding-top: 2rem;
+  }
+  .container.about h1 {
+    text-align: center;
+  }
+}
+
+.container.api,
+.container.api-about {
+  background-color: #eaeff0;
+  color: #23242a;
+  padding-left: 8vw;
+  padding-right: 2rem;
+  padding-top: 2rem;
+}
+
+.container.api a,
+.container.api-about a {
+  color: #aa2e00;
+}
+
+.list-endpoints {
+  list-style-type: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #bebebe;
+  border-radius: 8px;
+}
+
+td,
+th {
+  border: 1px solid #999;
+  padding: 1rem 2rem;
+  text-align: left;
+}
+
+tr:nth-child(2n) {
+  background-color: #d4d8d9;
+}
+
+td:first-child {
+  font-weight: 500;
+}
+
+td:last-child {
+  font-style: italic;
 }

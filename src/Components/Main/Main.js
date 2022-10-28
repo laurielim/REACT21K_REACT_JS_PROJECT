@@ -8,6 +8,8 @@ import Home from "../../Pages/Home/Home";
 import Recipes from "../../Pages/Recipes/Recipes";
 import About from "../../Pages/About/About";
 import PageNotFound from "../../Pages/PageNotFound/PageNotFound";
+import ApiHome from "../../Pages/ApiHome/ApiHome";
+import ApiAbout from "../../Pages/ApiAbout/ApiAbout";
 
 const Main = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -71,6 +73,8 @@ const Main = () => {
           />
         </Route>
         <Route path="/about" component={About} />
+        <Route path="/api/about" component={ApiAbout} />
+        <Route path="/api" component={ApiHome} />
         <Route path="*" component={PageNotFound} />
       </Switch>
     </main>
