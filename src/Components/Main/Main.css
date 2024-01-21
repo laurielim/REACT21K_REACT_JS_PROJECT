@@ -108,6 +108,10 @@
   list-style-type: none;
 }
 
+.api-link {
+  text-decoration: underline;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;

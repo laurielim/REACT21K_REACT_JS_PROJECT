@@ -35,6 +35,10 @@
 	color: #23242a;
 }
 
+.alert-heading {
+	margin-top: 1rem;
+}
+
 .recipe-added-alert p {
 	margin-top: 0;
 }
