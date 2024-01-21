@@ -34,7 +34,7 @@ const ApiHome = () => {
             <p>
               Get a list of all recipes available:{" "}
               <span class="api-link">
-                https://laurielim-thecocktailapp-api.herokuapp.com/recipes
+                /recipes
               </span>
             </p>
             <table>
@@ -78,7 +78,7 @@ const ApiHome = () => {
             <p>
               Get a list of IBA Cocktail recipes only:{" "}
               <span class="api-link">
-                https://laurielim-thecocktailapp-api.herokuapp.com/recipes/iba
+                /recipes/iba
               </span>
             </p>
             <table>
@@ -118,7 +118,7 @@ const ApiHome = () => {
             <p>
               Search recipe by id:{" "}
               <span class="api-link">
-                https://laurielim-thecocktailapp-api.herokuapp.com/recipes/-id-
+                /recipes/{'{id}'}
               </span>
             </p>
             <table>

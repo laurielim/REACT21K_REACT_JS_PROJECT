@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer>
       <p>
-        Made by <a href="https://github.com/laurielim">Laurie</a>. Copyright{" "}
+        Made by <a href="//laurielim.github.io/">Laurie Lim Sam</a>. Copyright{" "}
         {today.getFullYear()}
       </p>
     </footer>

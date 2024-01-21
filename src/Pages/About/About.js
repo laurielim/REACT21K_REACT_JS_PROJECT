@@ -40,12 +40,12 @@ class About extends Component {
 				<p>
 					Since I was learning PHP in parallel, I created a RESTful API for my
 					website. You can check out the{" "}
-					<a href='//laurielim-thecocktailapp-api.herokuapp.com'>
+					<a href='/api'>
 						API page here
 					</a>
 					. IBA official cocktails are stored in JSON files while contributed
 					recipes are stored in an SQL database. Read more about this project on{" "}
-					<a href='//laurielim.github.io/portfolio/thecocktailapp/'>
+					<a href='//laurielim.github.io/portfolio/theCocktailApp/'>
 						my portfolio website
 					</a>
 					.

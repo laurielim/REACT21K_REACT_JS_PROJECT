@@ -53,7 +53,7 @@ const ApiAbout = () => {
         I started looking. I used a lot of pictures from{" "}
         <a href="//unsplash.com/@cocktailbart">Johann Trasch</a> whom I
         eventually messaged. He kindly gave me permission to use his pictures
-        from his own website about cocktails,
+        from his own website about cocktails,{" "}
         <a href="//cocktailbart.de/">cocktailbart.de</a>. Check it out, it's
         great! Even if you don't speak German, google chrome neatly translates
         the website.
@@ -69,14 +69,10 @@ const ApiAbout = () => {
       <p>
         Please checkout <a href="/">TheCocktailApp</a> and read more about the
         whole project on{" "}
-        <a href="//laurielim.github.io/portfolio/thecocktailapp/">
+        <a href="//laurielim.github.io/portfolio/theCocktailApp/">
           my portfolio website
         </a>
-        . Feel free to contact me{" "}
-        <a href="//twitter.com/intent/tweet?screen_name=laurielimsam">
-          @laurielimsam on Twitter
-        </a>{" "}
-        for any feedback.
+        .
       </p>
     </div>
   );
