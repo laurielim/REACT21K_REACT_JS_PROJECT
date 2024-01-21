@@ -11,7 +11,7 @@ Built with:
 - HTML
 - JS
 - CSS
-- Reactjs
+- Reactjs 17
 
 Hosted on:
 
@@ -19,14 +19,18 @@ Hosted on:
 
 ## Setup and Usage
 
-Inside a cloned directory/folder, run:
+
+Inside the root, with Node 16 run:
 
 ```bash
 npm install
-npm install react-router-dom
-npm install json-server --save-dev
-npm install axios
-npm install react-bootstrap bootstrap
+npm run start
+```
+
+To deploy run, with netlify-cli:
+
+```bash
+netlify deploy
 ```
 
 ## Sources & Attributions
